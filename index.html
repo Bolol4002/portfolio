@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayooj S - Hardware Verification Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0e27;
+            color: #00ff41;
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .scanline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, 
+                rgba(255, 255, 255, 0) 50%, 
+                rgba(0, 255, 65, 0.02) 51%);
+            background-size: 100% 4px;
+            pointer-events: none;
+            z-index: 1000;
+            animation: scanline 8s linear infinite;
+        }
+
+        @keyframes scanline {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(100vh); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .terminal {
+            background: rgba(10, 14, 39, 0.95);
+            border: 2px solid #00ff41;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3), inset 0 0 50px rgba(0, 255, 65, 0.05);
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .terminal-header {
+            background: #00ff41;
+            color: #0a0e27;
+            padding: 8px 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: bold;
+        }
+
+        .terminal-buttons {
+            display: flex;
+            gap: 6px;
+        }
+
+        .terminal-button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #0a0e27;
+        }
+
+        .terminal-content {
+            padding: 25px;
+        }
+
+        .prompt {
+            color: #00d9ff;
+            margin-right: 8px;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 18px;
+            background: #00ff41;
+            animation: blink 1s infinite;
+            margin-left: 2px;
+        }
+
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+
+        .header-section {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .profile-photo-container {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 30px;
+            border: 3px solid #00ff41;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.5);
+            position: relative;
+            background: #0a0e27;
+        }
+
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(1.1) brightness(0.9);
+        }
+
+        .placeholder-photo {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            color: #00ff41;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a2e47 100%);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.7);
+        }
+
+        h2 {
+            color: #00d9ff;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #00ff41;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .subtitle {
+            color: #00d9ff;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .contact-links a {
+            color: #00ff41;
+            text-decoration: none;
+            padding: 8px 15px;
+            border: 1px solid #00ff41;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .contact-links a:hover {
+            background: #00ff41;
+            color: #0a0e27;
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.7);
+        }
+
+        .section {
+            margin: 30px 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-category {
+            background: rgba(0, 255, 65, 0.05);
+            border: 1px solid #00ff41;
+            border-radius: 6px;
+            padding: 20px;
+        }
+
+        .skill-category h3 {
+            color: #00d9ff;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .skill-category li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #00d9ff;
+        }
+
+        .project-card {
+            background: rgba(0, 255, 65, 0.05);
+            border: 1px solid #00ff41;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 15px 0;
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: #00d9ff;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+            transform: translateX(10px);
+        }
+
+        .project-card h3 {
+            color: #00d9ff;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .project-tech {
+            color: #ffd700;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .education-item {
+            background: rgba(0, 255, 65, 0.05);
+            border-left: 4px solid #00ff41;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .education-item h3 {
+            color: #00d9ff;
+            margin-bottom: 5px;
+        }
+
+        .education-details {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 5px;
+        }
+
+        .command-line {
+            margin: 10px 0;
+            line-height: 1.8;
+        }
+
+        .nav-menu {
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+            margin-bottom: 30px;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #00ff41;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid #00ff41;
+            border-radius: 4px;
+            transition: all 0.3s;
+            background: rgba(10, 14, 39, 0.95);
+        }
+
+        .nav-links a:hover {
+            background: #00ff41;
+            color: #0a0e27;
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.7);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8em; }
+            h2 { font-size: 1.4em; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .contact-links { flex-direction: column; align-items: center; }
+            .profile-photo-container { width: 150px; height: 150px; }
+        }
+
+        .typing-text {
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 3s steps(40) 1s forwards;
+            opacity: 0;
+        }
+
+        @keyframes typing {
+            from { width: 0; opacity: 1; }
+            to { width: 100%; opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="scanline"></div>
+    
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="nav-menu">
+            <div class="terminal">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <div class="terminal-button"></div>
+                        <div class="terminal-button"></div>
+                        <div class="terminal-button"></div>
+                    </div>
+                    <span>navigation.sh</span>
+                </div>
+                <div class="terminal-content">
+                    <div class="nav-links">
+                        <a href="#home">~/home</a>
+                        <a href="#about">~/about</a>
+                        <a href="#skills">~/skills</a>
+                        <a href="#projects">~/projects</a>
+                        <a href="#education">~/education</a>
+                        <a href="#contact">~/contact</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Header Section -->
+        <section id="home" class="terminal">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <div class="terminal-button"></div>
+                    <div class="terminal-button"></div>
+                    <div class="terminal-button"></div>
+                </div>
+                <span>portfolio.sh</span>
+            </div>
+            <div class="terminal-content header-section">
+                <div class="profile-photo-container">
+                    <!-- Replace the src with your photo URL -->
+                    <div class="placeholder-photo" id="photoPlaceholder">👨‍💻</div>
+                    <!-- <img src="your-photo-url.jpg" alt="Sayooj S" class="profile-photo" id="profilePhoto"> -->
+                </div>
+                <h1>SAYOOJ S</h1>
+                <p class="subtitle">Hardware Verification Engineer | VLSI Enthusiast</p>
+                <div class="contact-links">
+                    <a href="mailto:Sayoojsumesh1112@gmail.com">📧 Email</a>
+                    <a href="https://www.linkedin.com/in/sayooj-s-7a8580285/" target="_blank">💼 LinkedIn</a>
+                    <a href="https://github.com/Bolol4002" target="_blank">🐙 GitHub</a>
+                    <a href="tel:+917736487303">📱 +91 7736487303</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="terminal section">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <div class="terminal-button"></div>
+                    <div class="terminal-button"></div>
+                    <div class="terminal-button"></div>
+                </div>
+                <span>about.txt</span>
+            </div>
+            <div class="terminal-content">
+                <h2>$ cat about.txt</h2>
+                <div class="command-line">
+                    <p>B.Tech student in Electronics and Communication Engineering with specialization in VLSI. Passionate about CPU microarchitecture, performance verification, and RTL design.</p>
+                    <br>
+                    <p>Proven experience in developing automated verification tools using Python and Perl, designing digital circuits in Verilog/SystemVerilog, and debugging complex systems.</p>
+                    <br>
+                    <p>Seeking to apply skills in performance analysis, infrastructure development, and post-silicon validation in challenging hardware verification roles.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="terminal section">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <div class="terminal-button"></div>
+                    <div class="terminal-button"></div>
+                    <div class="terminal-button"></div>
+                </div>
+                <span>skills.json</span>
+            </div>
+            <div class="terminal-content">
+                <h2>$ cat skills.json</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>Perl</li>
+                            <li>C / C++</li>
+                            <li>Verilog / SystemVerilog</li>
+                            <li>Shell Script</li>
+                            <li>Java</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tools & Platforms</h3>
+                        <ul>
+                            <li>Xilinx Vivado</li>
+                            <li>Cadence Virtuoso</li>
+                            <li>Git</li>
+                            <li>Linux/Unix</li>
+                            <li>ESP32</li>
+                            <li>OpenCV</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Core Concepts</h3>
+                        <ul>
+                            <li>CPU Microarchitecture</li>
+                            <li>RTL Design</li>
+                            <li>Performance Verification</li>
+                            <li>FPGA Flows</li>
+                            <li>Log Triage & Automation</li>
+                            <li>Functional Coverage</li>
+                            <li>Assertions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="terminal section">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <div class="terminal-button"></div>
+                    <div class="terminal-button"></div>
+                    <div class="terminal-button"></div>
+                </div>
+                <span>projects.log</span>
+            </div>
+            <div class="terminal-content">
+                <h2>$ ls -la ~/projects/</h2>
+                
+                <div class="project-card">
+                    <h3>CPU Performance Verification & Automation</h3>
+                    <p class="project-tech">Python, Perl</p>
+                    <p>Developed Python-based CPU Log Parser to parse execution logs, count instructions, detect pipeline stalls, and generate detailed execution reports. Engineered a CPU Performance Analyzer to compute key microarchitectural metrics including CPI, IPC, and execution time from simulation logs.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>Mini RISC-V Processor (5-Stage Pipeline)</h3>
+                    <p class="project-tech">SystemVerilog, Vivado</p>
+                    <p>Designing a pipelined RISC-V CPU core with stages: IF, ID, EX, MEM, and WB. Applying deep knowledge of CPU microarchitecture, pipeline hazards, and digital logic design to implement a functional processor.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>AMBA APB Memory Interface</h3>
+                    <p class="project-tech">SystemVerilog</p>
+                    <p>Implemented an AMBA APB protocol-compliant memory interface from scratch. Developed a random testbench and achieved high functional coverage to ensure design correctness and robustness.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>SRAM Design & Verification</h3>
+                    <p class="project-tech">SystemVerilog</p>
+                    <p>Designed and verified a synchronous SRAM module using SystemVerilog. Created a random constrained testbench and used assertions for verification, showcasing skills in modern verification methodologies.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>8-bit ALU Design</h3>
+                    <p class="project-tech">Verilog, Vivado</p>
+                    <p>Designed a synthesizable 8-bit Arithmetic Logic Unit supporting a range of arithmetic and logical operations, demonstrating fundamentals of RTL design.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>Drowsiness Detection System</h3>
+                    <p class="project-tech">ESP32-CAM, OpenCV, Python</p>
+                    <p>Developed a real-time system using embedded hardware and computer vision to detect driver fatigue, integrating hardware and software for functional validation.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>YOLO-based Object Detection</h3>
+                    <p class="project-tech">Python, OpenCV, YOLO</p>
+                    <p>Implemented lightweight edge AI vision for object detection tasks using YOLO algorithm and OpenCV.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="terminal section">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <div class="terminal-button"></div>
+                    <div class="terminal-button"></div>
+                    <div class="terminal-button"></div>
+                </div>
+                <span>education.db</span>
+            </div>
+            <div class="terminal-content">
+                <h2>$ query education.db</h2>
+                
+                <div class="education-item">
+                    <h3>B.Tech – Electronics & Communication Engineering (VLSI Specialization)</h3>
+                    <div class="education-details">
+                        <span>KL University, Hyderabad</span>
+                        <span>2023 – 2027</span>
+                    </div>
+                    <p style="margin-top: 10px;">CGPA: 9.35</p>
+                </div>
+
+                <div class="education-item">
+                    <h3>Higher Secondary (Class XII)</h3>
+                    <div class="education-details">
+                        <span>GSPS Thengana, Kerala</span>
+                        <span>2023</span>
+                    </div>
+                    <p style="margin-top: 10px;">CGPA: 9.3</p>
+                </div>
+
+                <div class="education-item">
+                    <h3>Secondary (Class X)</h3>
+                    <div class="education-details">
+                        <span>Kendriya Vidyalaya Adoor</span>
+                        <span>2021</span>
+                    </div>
+                    <p style="margin-top: 10px;">CGPA: 9.5</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="terminal section">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <div class="terminal-button"></div>
+                    <div class="terminal-button"></div>
+                    <div class="terminal-button"></div>
+                </div>
+                <span>contact.sh</span>
+            </div>
+            <div class="terminal-content">
+                <h2>$ ./contact.sh</h2>
+                <div class="command-line">
+                    <p><span class="prompt">email:</span> Sayoojsumesh1112@gmail.com</p>
+                    <p><span class="prompt">phone:</span> +91 7736487303</p>
+                    <p><span class="prompt">location:</span> Hyderabad, India</p>
+                    <p><span class="prompt">linkedin:</span> <a href="https://www.linkedin.com/in/sayooj-s-7a8580285/" target="_blank" style="color: #00d9ff;">linkedin.com/in/sayooj-s-7a8580285/</a></p>
+                    <p><span class="prompt">github:</span> <a href="https://github.com/Bolol4002" target="_blank" style="color: #00d9ff;">github.com/Bolol4002</a></p>
+                    <br>
+                    <p><span class="prompt">$</span> Open for opportunities in Hardware Verification, RTL Design, and VLSI<span class="cursor"></span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <div class="terminal" style="margin-top: 40px; margin-bottom: 40px;">
+            <div class="terminal-content" style="text-align: center; padding: 20px;">
+                <p>© 2024 Sayooj S | Built with 💚 in Terminal Mode</p>
+                <p style="margin-top: 10px; font-size: 0.9em;">Last updated: December 2024</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add glitch effect on hover for project cards
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.textShadow = '2px 2px #00d9ff, -2px -2px #ff00de';
+                setTimeout(() => {
+                    this.style.textShadow = 'none';
+                }, 100);
+            });
+        });
+
+        // Type writer effect for command prompt
+        function typeWriter(element, text, speed = 50) {
+            let i = 0;
+            element.innerHTML = '';
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.terminal').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Photo upload functionality
+        // Uncomment and modify this section when you want to add your photo
+        /*
+        const photoInput = document.createElement('input');
+        photoInput.type = 'file';
+        photoInput.accept = 'image/*';
+        photoInput.style.display = 'none';
+        document.body.appendChild(photoInput);
+
+        const placeholder = document.getElementById('photoPlaceholder');
+        placeholder.style.cursor = 'pointer';
+        placeholder.addEventListener('click', () => photoInput.click());
+
+        photoInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    placeholder.innerHTML = `<img src="${e.target.result}" alt="Sayooj S" class="profile-photo">`;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+        */
+    </script>
+</body>
+</html>
