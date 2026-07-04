@@ -38,7 +38,7 @@
             <span>CPU Microarchitecture</span>
           </div>
         </div>
-        <pre id="ascii-art" class="ascii-art"></pre>
+        <canvas id="ascii-canvas" class="ascii-canvas" width="500" height="400"></canvas>
       </div>
       <div class="hero-status">Available for opportunities</div>
       <div class="hero-links">
@@ -55,10 +55,5 @@
   </footer>
 
   <script src="main.js"></script>
-  <script>
-    fetch('ascii.txt')
-      .then(r => r.text())
-      .then(t => { document.getElementById('ascii-art').textContent = t; });
-  </script>
 </body>
 </html>
