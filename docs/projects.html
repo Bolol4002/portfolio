@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Sayooj S</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="index.html" class="topnav-brand"><span>&gt;</span> sayooj</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <div class="topnav-links">
+        <a href="index.html" class="tab">Home</a>
+        <a href="about.html" class="tab">About</a>
+        <a href="skills.html" class="tab">Skills</a>
+        <a href="projects.html" class="tab active">Projects</a>
+        <a href="education.html" class="tab">Education</a>
+        <a href="contact.html" class="tab">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page">
+    <h1 class="section-title">Projects</h1>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <h3>CPU Performance Analyzer</h3>
+        <div class="project-tech">
+          <span>Python</span>
+          <span>Perl</span>
+        </div>
+        <p>Python tool that parses CPU execution logs and computes CPI, IPC, stall cycles, and execution time. Supports configurable clock frequencies and generates detailed instruction breakdown reports.</p>
+        <a href="projects/cpu-analyzer.html" class="view-link">View Details &rarr;</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Adaptive RTL Control Unit</h3>
+        <div class="project-tech">
+          <span>SystemVerilog</span>
+          <span>Vivado</span>
+        </div>
+        <p>Power-aware adaptive control unit that dynamically switches between low-power and high-performance modes. Synthesized and analyzed in Vivado for power, timing, and resource utilization.</p>
+        <a href="projects/adaptive-rtl.html" class="view-link">View Details &rarr;</a>
+      </div>
+
+      <div class="project-card">
+        <h3>AgroDrone Rover System</h3>
+        <div class="project-tech">
+          <span>ESP32</span>
+          <span>Arduino</span>
+          <span>Python</span>
+          <span>CNN</span>
+        </div>
+        <p>Hackathon-winning autonomous agricultural system combining drone and rover navigation with CNN-based plant disease detection and real-time heat map generation.</p>
+        <a href="projects/agrodrone.html" class="view-link">View Details &rarr;</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Fault-Tolerant ADC</h3>
+        <div class="project-tech">
+          <span>QSPICE</span>
+          <span>Analog Design</span>
+        </div>
+        <p>Fault-tolerant analog-to-digital converter for edge IoT devices. Includes comparator, priority encoder, and fault detection block that monitors Vref and raises error flags.</p>
+        <a href="projects/fault-tolerant-adc.html" class="view-link">View Details &rarr;</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Mini RISC-V Processor</h3>
+        <div class="project-tech">
+          <span>SystemVerilog</span>
+          <span>Vivado</span>
+        </div>
+        <p>5-stage pipelined RISC-V CPU core with IF, ID, EX, MEM, and WB stages. Implements hazard detection, forwarding, and a register file — demonstrating deep CPU microarchitecture knowledge.</p>
+        <a href="projects/riscv-processor.html" class="view-link">View Details &rarr;</a>
+      </div>
+
+      <div class="project-card">
+        <h3>AMBA APB Memory Interface</h3>
+        <div class="project-tech">
+          <span>SystemVerilog</span>
+        </div>
+        <p>Protocol-compliant AMBA APB memory interface with random testbench and functional coverage. Implements all APB transfer phases and handshake信号.</p>
+        <a href="projects/amba-apb.html" class="view-link">View Details &rarr;</a>
+      </div>
+
+      <div class="project-card">
+        <h3>SRAM Design &amp; Verification</h3>
+        <div class="project-tech">
+          <span>SystemVerilog</span>
+        </div>
+        <p>Synchronous SRAM module with constrained-random testbench and SVA assertions. Verifies read/write operations, timing, and data integrity across memory addresses.</p>
+        <a href="projects/sram.html" class="view-link">View Details &rarr;</a>
+      </div>
+
+      <div class="project-card">
+        <h3>8-bit ALU Design</h3>
+        <div class="project-tech">
+          <span>Verilog</span>
+          <span>Vivado</span>
+        </div>
+        <p>Synthesizable 8-bit Arithmetic Logic Unit supporting arithmetic, logical, and shift operations. Demonstrates RTL design fundamentals and Vivado synthesis flow.</p>
+        <a href="projects/alu.html" class="view-link">View Details &rarr;</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Drowsiness Detection System</h3>
+        <div class="project-tech">
+          <span>ESP32-CAM</span>
+          <span>OpenCV</span>
+          <span>Python</span>
+        </div>
+        <p>Real-time driver fatigue detection using embedded camera hardware and computer vision. Integrates ESP32-CAM capture with OpenCV-based eye tracking and alarm triggering.</p>
+        <a href="projects/drowsiness.html" class="view-link">View Details &rarr;</a>
+      </div>
+
+      <div class="project-card">
+        <h3>YOLO Object Detection</h3>
+        <div class="project-tech">
+          <span>Python</span>
+          <span>OpenCV</span>
+          <span>YOLO</span>
+        </div>
+        <p>Lightweight edge AI vision system for real-time object detection using YOLO algorithm. Optimized for resource-constrained deployment scenarios.</p>
+        <a href="projects/yolo.html" class="view-link">View Details &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div>&copy; 2026 Sayooj S</div>
+    <div>Crafted with <span>precision</span></div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

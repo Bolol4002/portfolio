@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adaptive RTL Control Unit — Sayooj S</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="../index.html" class="topnav-brand"><span>&gt;</span> sayooj</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <div class="topnav-links">
+        <a href="../index.html" class="tab">Home</a>
+        <a href="../about.html" class="tab">About</a>
+        <a href="../skills.html" class="tab">Skills</a>
+        <a href="../projects.html" class="tab active">Projects</a>
+        <a href="../education.html" class="tab">Education</a>
+        <a href="../contact.html" class="tab">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page project-detail">
+    <a href="../projects.html" class="back-link">&larr; All Projects</a>
+    <h1>Adaptive RTL Control Unit</h1>
+    <div class="tech-tags">
+      <span>SystemVerilog</span>
+      <span>Xilinx Vivado</span>
+      <span>Power-Aware Design</span>
+    </div>
+
+    <div class="detail-section">
+      <h2>Overview</h2>
+      <p>An adaptive control unit implemented at the RTL level that dynamically switches between two control strategies: a power-efficient mode and a high-performance mode. Demonstrates how RTL-level coding decisions significantly influence power and performance without modifying the datapath.</p>
+    </div>
+
+    <div class="detail-section">
+      <h2>Design Concepts</h2>
+      <ul>
+        <li><strong>Power-Efficient Control Unit:</strong> Minimizes signal switching, uses conditional decoding and gated logic, optimized for low dynamic power consumption</li>
+        <li><strong>High-Performance Control Unit:</strong> Uses parallel decoding and precomputed control signals, minimizes critical path delay, higher throughput</li>
+        <li><strong>Adaptive Wrapper:</strong> Selects between the two units via a mode signal, enabling dynamic runtime switching</li>
+      </ul>
+    </div>
+
+    <div class="detail-section">
+      <h2>Key Features</h2>
+      <ul>
+        <li>Two distinct RTL implementations with measurable power/performance trade-offs</li>
+        <li>Runtime mode switching without datapath modification</li>
+        <li>Full Vivado synthesis flow with power, timing, and resource analysis</li>
+        <li>Comparison metrics: dynamic power, LUT utilization, FF count, critical path delay, timing slack</li>
+      </ul>
+    </div>
+
+    <div class="detail-section">
+      <h2>Modules</h2>
+      <ul>
+        <li><code>low_power_control_unit.sv</code> — Gated logic, conditional decoding</li>
+        <li><code>high_perf_control_unit.sv</code> — Parallel decoding, precomputed signals</li>
+        <li><code>adaptive_control_unit.sv</code> — Mode selection wrapper</li>
+        <li><code>top_adaptive_control.sv</code> — Top-level integration</li>
+      </ul>
+    </div>
+
+    <div class="detail-section">
+      <h2>Tools</h2>
+      <ul>
+        <li>HDL: SystemVerilog</li>
+        <li>Synthesis: Xilinx Vivado</li>
+        <li>Simulation: Vivado Simulator</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <div>&copy; 2026 Sayooj S</div>
+    <div>Crafted with <span>precision</span></div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

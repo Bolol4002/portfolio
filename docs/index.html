@@ -1,167 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sayooj S - Electronics/VLSI/Linux Enthusiast</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <meta name="description" content="Portfolio of Sayooj S, Electronics, VLSI, and Linux enthusiast. Hardware Verification, RTL Design, and more.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sayooj S — Electronics / VLSI / Linux</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="description" content="Portfolio of Sayooj S — Electronics, VLSI, and Linux enthusiast. Hardware Verification, RTL Design, and more.">
 </head>
 <body>
-    <div class="container">
-      <nav>
-        <div class="nav-links">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#education">Education</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
 
-      <header id="home">
-        <div class="profile-photo-container">
-          <img src="me.jpg" alt="Sayooj S" class="profile-photo">
-        </div>
-        <h1>SAYOOJ S</h1>
-        <div class="subtitle" id="typed-text"></div>
-        <div class="status">Available for opportunities</div>
-        <div class="contact-links">
-          <a href="mailto:Sayoojsumesh1112@gmail.com">Email</a>
-          <a href="https://www.linkedin.com/in/sayooj-s-7a8580285/" target="_blank">LinkedIn</a>
-          <a href="https://github.com/Bolol4002" target="_blank">GitHub</a>
-        </div>
-      </header>
-
-      <section id="about">
-        <h2>About</h2>
-        <p>B.Tech student in Electronics and Communication Engineering with specialization in VLSI. Passionate about CPU microarchitecture, performance verification, and RTL design.</p>
-        <p>Seeking to apply skills in performance analysis, infrastructure development, and post-silicon validation in challenging hardware verification roles.</p>
-      </section>
-
-            <section id="skills">
-                <h2>Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Languages</h3>
-                        <ul>
-                            <li>Python</li>
-                            <li>Perl</li>
-                            <li>C / C++</li>
-                            <li>Verilog / SystemVerilog</li>
-                            <li>Shell Script</li>
-                            <li>Java</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Tools & Platforms</h3>
-                        <ul>
-                            <li>Xilinx Vivado</li>
-                            <li>Cadence Virtuoso</li>
-                            <li>Git</li>
-                            <li>Linux/Unix</li>
-                            <li>ESP32</li>
-                            <li>OpenCV</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Core Concepts</h3>
-                        <ul>
-                            <li>CPU Microarchitecture</li>
-                            <li>RTL Design</li>
-                            <li>Performance Verification</li>
-                            <li>FPGA Flows</li>
-                            <li>Log Triage & Automation</li>
-                            <li>Functional Coverage</li>
-                            <li>Assertions</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section id="projects">
-                <h2>Projects</h2>
-                <div class="project-card">
-                    <h3>CPU Performance Verification & Automation</h3>
-                    <div class="project-tech">Python, Perl</div>
-                    <p>Developed Python-based CPU Log Parser to parse execution logs, count instructions, detect pipeline stalls, and generate detailed execution reports. Engineered a CPU Performance Analyzer to compute key microarchitectural metrics including CPI, IPC, and execution time from simulation logs.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Mini RISC-V Processor (5-Stage Pipeline)</h3>
-                    <div class="project-tech">SystemVerilog, Vivado</div>
-                    <p>Designing a pipelined RISC-V CPU core with stages: IF, ID, EX, MEM, and WB. Applying deep knowledge of CPU microarchitecture, pipeline hazards, and digital logic design to implement a functional processor.</p>
-                </div>
-                <div class="project-card">
-                    <h3>AMBA APB Memory Interface</h3>
-                    <div class="project-tech">SystemVerilog</div>
-                    <p>Implemented an AMBA APB protocol-compliant memory interface from scratch. Developed a random testbench and achieved high functional coverage to ensure design correctness and robustness.</p>
-                </div>
-                <div class="project-card">
-                    <h3>SRAM Design & Verification</h3>
-                    <div class="project-tech">SystemVerilog</div>
-                    <p>Designed and verified a synchronous SRAM module using SystemVerilog. Created a random constrained testbench and used assertions for verification, showcasing skills in modern verification methodologies.</p>
-                </div>
-                <div class="project-card">
-                    <h3>8-bit ALU Design</h3>
-                    <div class="project-tech">Verilog, Vivado</div>
-                    <p>Designed a synthesizable 8-bit Arithmetic Logic Unit supporting a range of arithmetic and logical operations, demonstrating fundamentals of RTL design.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Drowsiness Detection System</h3>
-                    <div class="project-tech">ESP32-CAM, OpenCV, Python</div>
-                    <p>Developed a real-time system using embedded hardware and computer vision to detect driver fatigue, integrating hardware and software for functional validation.</p>
-                </div>
-                <div class="project-card">
-                    <h3>YOLO-based Object Detection</h3>
-                    <div class="project-tech">Python, OpenCV, YOLO</div>
-                    <p>Implemented lightweight edge AI vision for object detection tasks using YOLO algorithm and OpenCV.</p>
-                </div>
-            </section>
-
-            <section id="education">
-                <h2>Education</h2>
-                <div class="education-item">
-                    <h3>B.Tech – Electronics & Communication Engineering (VLSI Specialization)</h3>
-                    <div class="education-details">
-                        <span>KL University, Hyderabad</span>
-                        <span>2023 – 2027</span>
-                    </div>
-                    <div>CGPA: 9.35</div>
-                </div>
-                <div class="education-item">
-                    <h3>Higher Secondary (Class XII)</h3>
-                    <div class="education-details">
-                        <span>GSPS Thengana, Kerala</span>
-                        <span>2023</span>
-                    </div>
-                    <div>CGPA: 9.3</div>
-                </div>
-                <div class="education-item">
-                    <h3>Secondary (Class X)</h3>
-                    <div class="education-details">
-                        <span>Kendriya Vidyalaya Adoor</span>
-                        <span>2021</span>
-                    </div>
-                    <div>CGPA: 9.5</div>
-                </div>
-            </section>
-
-            <section id="contact">
-                <h2>Contact</h2>
-        <div class="contact-links" style="margin-bottom: 16px; justify-content: flex-start;">
-          <a href="mailto:Sayoojsumesh1112@gmail.com">Sayoojsumesh1112@gmail.com</a>
-          <a href="https://www.linkedin.com/in/sayooj-s-7a8580285/" target="_blank">LinkedIn</a>
-          <a href="https://github.com/Bolol4002" target="_blank">GitHub</a>
-        </div>
-        <p style="color: var(--fg-muted); font-size: 0.9em;">📍 Hyderabad, India</p>
-        <p style="margin-top: 12px; color: var(--fg);">Open for opportunities in <span style="color: var(--highlight);">Hardware Verification</span>, <span style="color: var(--highlight);">RTL Design</span>, and <span style="color: var(--highlight);">VLSI</span>.</p>
-      <footer>
-        <div>© 2026 Sayooj S</div>
-        <div>Crafted with precision</div>
-      </footer>
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="index.html" class="topnav-brand"><span>&gt;</span> sayooj</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <div class="topnav-links">
+        <a href="index.html" class="tab active">Home</a>
+        <a href="about.html" class="tab">About</a>
+        <a href="skills.html" class="tab">Skills</a>
+        <a href="projects.html" class="tab">Projects</a>
+        <a href="education.html" class="tab">Education</a>
+        <a href="contact.html" class="tab">Contact</a>
+      </div>
     </div>
-    <script src="main.js"></script>
+  </nav>
+
+  <div class="page">
+    <section class="hero">
+      <img src="me.jpg" alt="Sayooj S" class="hero-photo">
+      <div class="hero-row">
+        <div class="hero-text">
+          <h1>SAYOOJ S</h1>
+          <div class="hero-subtitle" id="typed-text"></div>
+        </div>
+        <div class="ascii-block">
+          <pre id="ascii-art"></pre>
+        </div>
+      </div>
+      <div class="hero-status">Available for opportunities</div>
+      <div class="hero-links">
+        <a href="mailto:Sayoojsumesh1112@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/sayooj-s-7a8580285/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Bolol4002" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div>&copy; 2026 Sayooj S</div>
+    <div>Crafted with <span>precision</span></div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    fetch('ascii.txt')
+      .then(r => r.text())
+      .then(t => { document.getElementById('ascii-art').textContent = t; });
+  </script>
 </body>
 </html>

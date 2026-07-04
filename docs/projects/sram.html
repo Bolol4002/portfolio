@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SRAM Design &amp; Verification — Sayooj S</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="../index.html" class="topnav-brand"><span>&gt;</span> sayooj</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <div class="topnav-links">
+        <a href="../index.html" class="tab">Home</a>
+        <a href="../about.html" class="tab">About</a>
+        <a href="../skills.html" class="tab">Skills</a>
+        <a href="../projects.html" class="tab active">Projects</a>
+        <a href="../education.html" class="tab">Education</a>
+        <a href="../contact.html" class="tab">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page project-detail">
+    <a href="../projects.html" class="back-link">&larr; All Projects</a>
+    <h1>SRAM Design &amp; Verification</h1>
+    <div class="tech-tags">
+      <span>SystemVerilog</span>
+      <span>SVA</span>
+      <span>Verification</span>
+    </div>
+
+    <div class="detail-section">
+      <h2>Overview</h2>
+      <p>A synchronous SRAM module designed and verified using modern verification methodologies. Features a constrained-random testbench with SystemVerilog Assertions (SVA) for rigorous functional validation.</p>
+    </div>
+
+    <div class="detail-section">
+      <h2>Design</h2>
+      <ul>
+        <li>Synchronous read/write operations synchronized to clock edge</li>
+        <li>Parameterized address and data bus widths</li>
+        <li>Byte-enable write mask support</li>
+        <li>Single-port configuration</li>
+      </ul>
+    </div>
+
+    <div class="detail-section">
+      <h2>Verification</h2>
+      <ul>
+        <li>Constrained-random address and data generation</li>
+        <li>SVA assertions checking read-after-write consistency</li>
+        <li>Data integrity verification across all memory locations</li>
+        <li>Timing checks for setup and hold violations</li>
+        <li>Coverage-driven verification for exhaustive stimulus</li>
+      </ul>
+    </div>
+
+    <div class="detail-section">
+      <h2>Key Features</h2>
+      <ul>
+        <li>Modern verification: constrained-random + assertions + coverage</li>
+        <li>Self-checking testbench with automatic pass/fail reporting</li>
+        <li>Reusable verification components</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <div>&copy; 2026 Sayooj S</div>
+    <div>Crafted with <span>precision</span></div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

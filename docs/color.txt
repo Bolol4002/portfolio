@@ -1,0 +1,6 @@
+Palette
+#001011 — Ink Black
+#093A3E — Dark Teal
+#3AAFB9 — Tropical Teal
+#64E9EE — Electric Aqua
+#97C8EB — Sky Blue

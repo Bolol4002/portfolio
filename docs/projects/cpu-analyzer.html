@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CPU Performance Analyzer — Sayooj S</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="../index.html" class="topnav-brand"><span>&gt;</span> sayooj</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <div class="topnav-links">
+        <a href="../index.html" class="tab">Home</a>
+        <a href="../about.html" class="tab">About</a>
+        <a href="../skills.html" class="tab">Skills</a>
+        <a href="../projects.html" class="tab active">Projects</a>
+        <a href="../education.html" class="tab">Education</a>
+        <a href="../contact.html" class="tab">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page project-detail">
+    <a href="../projects.html" class="back-link">&larr; All Projects</a>
+    <h1>CPU Performance Analyzer</h1>
+    <div class="tech-tags">
+      <span>Python</span>
+      <span>Perl</span>
+      <span>CLI Tool</span>
+    </div>
+
+    <div class="detail-section">
+      <h2>Overview</h2>
+      <p>A lightweight Python tool that parses CPU execution logs and computes key performance metrics. Designed for hardware verification engineers who need quick cycle-level analysis of simulation output without heavy toolchains.</p>
+    </div>
+
+    <div class="detail-section">
+      <h2>Key Features</h2>
+      <ul>
+        <li>Automatic log parsing with regex-based instruction extraction</li>
+        <li>CPI (Cycles Per Instruction) and IPC (Instructions Per Cycle) computation</li>
+        <li>Stall cycle detection and reporting</li>
+        <li>Configurable clock frequency for execution time estimation</li>
+        <li>Instruction breakdown with per-opcode counts sorted by frequency</li>
+        <li>CLI interface with argparse for easy integration into test flows</li>
+      </ul>
+    </div>
+
+    <div class="detail-section">
+      <h2>Architecture</h2>
+      <p>The tool operates in three phases:</p>
+      <ul>
+        <li><strong>Parse:</strong> Reads execution logs line-by-line, extracting cycle numbers, instruction opcodes, and stall markers using regex patterns</li>
+        <li><strong>Compute:</strong> Calculates aggregate metrics — total cycles, instruction count, CPI, IPC, and wall-clock execution time</li>
+        <li><strong>Report:</strong> Prints a formatted performance report with instruction breakdown sorted by frequency</li>
+      </ul>
+    </div>
+
+    <div class="detail-section">
+      <h2>Usage</h2>
+      <ul>
+        <li><code>python performance_analyzer.py sample_log.txt</code></li>
+        <li><code>python performance_analyzer.py sample_log.txt --clock 2.5</code> (for 2.5 GHz)</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <div>&copy; 2026 Sayooj S</div>
+    <div>Crafted with <span>precision</span></div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

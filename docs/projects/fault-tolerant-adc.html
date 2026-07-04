@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fault-Tolerant ADC — Sayooj S</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="../index.html" class="topnav-brand"><span>&gt;</span> sayooj</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <div class="topnav-links">
+        <a href="../index.html" class="tab">Home</a>
+        <a href="../about.html" class="tab">About</a>
+        <a href="../skills.html" class="tab">Skills</a>
+        <a href="../projects.html" class="tab active">Projects</a>
+        <a href="../education.html" class="tab">Education</a>
+        <a href="../contact.html" class="tab">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page project-detail">
+    <a href="../projects.html" class="back-link">&larr; All Projects</a>
+    <h1>Fault-Tolerant ADC</h1>
+    <div class="tech-tags">
+      <span>QSPICE</span>
+      <span>Analog Design</span>
+      <span>IoT</span>
+    </div>
+
+    <div class="detail-section">
+      <h2>Overview</h2>
+      <p>A fault-tolerant analog-to-digital converter designed for edge IoT devices. Built entirely in QSPICE, this project implements a complete ADC pipeline with an added fault detection and protection block that monitors supply voltage integrity.</p>
+    </div>
+
+    <div class="detail-section">
+      <h2>Architecture</h2>
+      <ul>
+        <li><strong>Comparator:</strong> Ideal comparator subcircuit comparing analog input against reference voltage</li>
+        <li><strong>Priority Encoder:</strong> 8-to-3 priority encoder converting comparator outputs to 3-bit digital code</li>
+        <li><strong>Fault Detection Block:</strong> Monitors Vref (7V–9V safe range), raises error flag and blocks signal on out-of-range conditions</li>
+        <li><strong>Resistor Ladder:</strong> Generates reference voltage levels for the comparators</li>
+      </ul>
+    </div>
+
+    <div class="detail-section">
+      <h2>Key Features</h2>
+      <ul>
+        <li>Complete ADC pipeline: analog input → comparators → priority encoder → digital output</li>
+        <li>Fault detection with automatic error flagging and signal isolation</li>
+        <li>Safe voltage range monitoring (7V–9V) for IoT edge reliability</li>
+        <li>Subcircuit-based modular design for reusability</li>
+      </ul>
+    </div>
+
+    <div class="detail-section">
+      <h2>Team</h2>
+      <ul>
+        <li>Sayooj S</li>
+        <li>Rohan Madanu</li>
+        <li>Pranav Madanu</li>
+        <li>Rizwan</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <div>&copy; 2026 Sayooj S</div>
+    <div>Crafted with <span>precision</span></div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

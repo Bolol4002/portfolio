@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drowsiness Detection System — Sayooj S</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="../index.html" class="topnav-brand"><span>&gt;</span> sayooj</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <div class="topnav-links">
+        <a href="../index.html" class="tab">Home</a>
+        <a href="../about.html" class="tab">About</a>
+        <a href="../skills.html" class="tab">Skills</a>
+        <a href="../projects.html" class="tab active">Projects</a>
+        <a href="../education.html" class="tab">Education</a>
+        <a href="../contact.html" class="tab">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page project-detail">
+    <a href="../projects.html" class="back-link">&larr; All Projects</a>
+    <h1>Drowsiness Detection System</h1>
+    <div class="tech-tags">
+      <span>ESP32-CAM</span>
+      <span>OpenCV</span>
+      <span>Python</span>
+      <span>Embedded</span>
+    </div>
+
+    <div class="detail-section">
+      <h2>Overview</h2>
+      <p>A real-time driver fatigue detection system combining embedded hardware (ESP32-CAM) with computer vision (OpenCV) to monitor eye closure patterns and trigger alerts when drowsiness is detected.</p>
+    </div>
+
+    <div class="detail-section">
+      <h2>System Architecture</h2>
+      <ul>
+        <li><strong>Hardware:</strong> ESP32-CAM module captures live video feed</li>
+        <li><strong>Processing:</strong> Python backend with OpenCV for face and eye detection</li>
+        <li><strong>Detection:</strong> Eye Aspect Ratio (EAR) computation for blink tracking</li>
+        <li><strong>Alert:</strong> Audio/visual alarm triggered on sustained eye closure</li>
+      </ul>
+    </div>
+
+    <div class="detail-section">
+      <h2>Key Features</h2>
+      <ul>
+        <li>Real-time video processing with low latency</li>
+        <li>EAR-based drowsiness metric for reliable detection</li>
+        <li>Embedded + software integration for portable deployment</li>
+        <li>Configurable sensitivity thresholds</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <div>&copy; 2026 Sayooj S</div>
+    <div>Crafted with <span>precision</span></div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>
