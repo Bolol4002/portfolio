@@ -1,47 +1,5 @@
 // main.js — Portfolio multi-page interactions
 
-// ── Typing animation (home page only) ──
-const phrases = [
-  'Electronics & VLSI Enthusiast',
-  'Hardware Verification',
-  'RTL Design',
-  'Linux Advocate',
-  'CPU Microarchitecture'
-];
-
-let phraseIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-let typingSpeed = 80;
-
-function typeText() {
-  const el = document.getElementById('typed-text');
-  if (!el) return;
-
-  const phrase = phrases[phraseIndex];
-
-  if (isDeleting) {
-    el.innerHTML = phrase.substring(0, charIndex - 1) + '<span class="cursor"></span>';
-    charIndex--;
-    typingSpeed = 40;
-  } else {
-    el.innerHTML = phrase.substring(0, charIndex + 1) + '<span class="cursor"></span>';
-    charIndex++;
-    typingSpeed = 80;
-  }
-
-  if (!isDeleting && charIndex === phrase.length) {
-    isDeleting = true;
-    typingSpeed = 2000;
-  } else if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    phraseIndex = (phraseIndex + 1) % phrases.length;
-    typingSpeed = 500;
-  }
-
-  setTimeout(typeText, typingSpeed);
-}
-
 // ── Mobile nav toggle ──
 function initNavToggle() {
   const toggle = document.querySelector('.nav-toggle');
@@ -79,7 +37,6 @@ function initCardTilt() {
 
 // ── Init ──
 document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(typeText, 800);
   initNavToggle();
   initCardTilt();
 });
