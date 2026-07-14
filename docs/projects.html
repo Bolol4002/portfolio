@@ -28,6 +28,30 @@
     <h1 class="section-title">Projects</h1>
     <div class="projects-grid">
 
+      <div class="project-card project-card--featured">
+        <img src="img/s-core/architecture.png" alt="s-core CPU architecture" class="project-card-img">
+        <h3>s-core — RISC-V CPU</h3>
+        <div class="project-tech">
+          <span>SystemVerilog</span>
+          <span>cocotb</span>
+          <span>Vivado</span>
+        </div>
+        <p>Single-cycle RISC-V CPU built module-by-module with cocotb-based verification. Targets FPGA synthesis on a Basys3 board with a clock divider for LED visualization.</p>
+        <a href="projects/s-core.html" class="view-link">View Details &rarr;</a>
+      </div>
+
+      <div class="project-card project-card--featured">
+        <img src="img/accumulator/layout.png" alt="Accumulator ASIC layout" class="project-card-img">
+        <h3>4-bit Accumulator — ASIC Flow</h3>
+        <div class="project-tech">
+          <span>Verilog</span>
+          <span>OpenLane</span>
+          <span>OpenROAD</span>
+        </div>
+        <p>4-bit accumulator taken through a complete ASIC physical design flow — from RTL to GDS — using OpenLane/OpenROAD. Includes DRC, LVS, STA, and IR drop signoff checks.</p>
+        <a href="projects/accumulator.html" class="view-link">View Details &rarr;</a>
+      </div>
+
       <div class="project-card">
         <h3>CPU Performance Analyzer</h3>
         <div class="project-tech">
@@ -85,7 +109,7 @@
         <div class="project-tech">
           <span>SystemVerilog</span>
         </div>
-        <p>Protocol-compliant AMBA APB memory interface with random testbench and functional coverage. Implements all APB transfer phases and handshake信号.</p>
+        <p>Protocol-compliant AMBA APB memory interface with random testbench and functional coverage. Implements all APB transfer phases and handshake signals.</p>
         <a href="projects/amba-apb.html" class="view-link">View Details &rarr;</a>
       </div>
 

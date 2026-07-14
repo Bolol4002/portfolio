@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4-bit Accumulator — ASIC Flow — Sayooj S</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="../index.html" class="topnav-brand"><span>&gt;</span> sayooj</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <div class="topnav-links">
+        <a href="../index.html" class="tab">Home</a>
+        <a href="../about.html" class="tab">About</a>
+        <a href="../skills.html" class="tab">Skills</a>
+        <a href="../projects.html" class="tab active">Projects</a>
+        <a href="../education.html" class="tab">Education</a>
+        <a href="../contact.html" class="tab">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page project-detail">
+    <a href="../projects.html" class="back-link">&larr; All Projects</a>
+    <h1>4-bit Accumulator — ASIC Flow</h1>
+    <div class="tech-tags">
+      <span>Verilog</span>
+      <span>OpenLane</span>
+      <span>OpenROAD</span>
+      <span>Yosys</span>
+      <span>Magic</span>
+      <span>KLayout</span>
+    </div>
+
+    <div class="detail-section">
+      <h2>Overview</h2>
+      <p>A 4-bit accumulator digital block implemented in Verilog, verified with a testbench, and taken through a complete ASIC physical design flow using OpenLane/OpenROAD. This project demonstrates end-to-end chip design — from RTL to GDS — with full signoff checks.</p>
+    </div>
+
+    <div class="detail-section">
+      <h2>Key Features</h2>
+      <ul>
+        <li>Clean, minimal Verilog RTL (16 lines of design code)</li>
+        <li>Full testbench with VCD waveform generation</li>
+        <li>Complete ASIC physical design flow from RTL to GDS</li>
+        <li>Multiple signoff checks: DRC (Magic + KLayout), LVS, XOR, STA, IR drop</li>
+        <li>Reproducible flow with OpenLane config and pin order constraints</li>
+      </ul>
+    </div>
+
+    <div class="detail-section">
+      <h2>Design</h2>
+      <ul>
+        <li><strong>Ports:</strong> <code>clk</code> (input), <code>rst</code> (input), <code>en</code> (input), <code>data_in[3:0]</code> (input), <code>acc[3:0]</code> (output)</li>
+        <li><strong>Behavior:</strong> On reset, accumulator clears to zero. On rising clock edge when enabled, adds <code>data_in</code> to the running accumulator value. Otherwise holds.</li>
+        <li><strong>Pin Config:</strong> North (clk), South (rst), East (en), West (data_in, acc)</li>
+      </ul>
+    </div>
+
+    <div class="detail-section">
+      <h2>ASIC Physical Design Flow</h2>
+      <p>The project ran through 77+ OpenLane flow steps including:</p>
+      <ul>
+        <li><strong>Linting:</strong> Verilator lint, timing constructs check</li>
+        <li><strong>Synthesis:</strong> Yosys synthesis, unmapped cells check, synth checks</li>
+        <li><strong>Floorplanning:</strong> STA prep, floorplan, power connections, tap/endcap insertion</li>
+        <li><strong>Power Distribution:</strong> PDN generation</li>
+        <li><strong>Placement:</strong> IO placement, global placement, detailed placement</li>
+        <li><strong>Routing:</strong> Global routing, antenna repair, detailed routing</li>
+        <li><strong>Signoff:</strong> STA (pre and post PNR), IR drop report, DRC, LVS, XOR check</li>
+      </ul>
+    </div>
+
+    <div class="detail-section">
+      <h2>Manufacturing Outputs</h2>
+      <ul>
+        <li><strong>GDS</strong> — Magic and KLayout layout exports</li>
+        <li><strong>LEF/DEF</strong> — Library exchange format and design exchange format</li>
+        <li><strong>SPICE netlist</strong> — Extracted netlist for LVS</li>
+        <li><strong>SPEF/SDF</strong> — Parasitic extraction and standard delay format</li>
+        <li><strong>LIB/SDC</strong> — Liberty timing and Synopsys design constraints</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <div>&copy; 2026 Sayooj S</div>
+    <div>Crafted with <span>precision</span></div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

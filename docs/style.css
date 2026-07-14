@@ -391,6 +391,23 @@ body::before {
   gap: 10px;
 }
 
+/* ── Project card image ── */
+.project-card-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  border: 1px solid var(--border);
+  transition: border-color 0.3s var(--ease);
+}
+.project-card--featured {
+  border-left-color: var(--accent-hi);
+}
+.project-card--featured:hover .project-card-img {
+  border-color: var(--accent);
+}
+
 /* ── Project detail page ── */
 .project-detail { padding-top: 20px; }
 .back-link {
