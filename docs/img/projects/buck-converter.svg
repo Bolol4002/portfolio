@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="300" viewBox="0 0 520 300"><style>
+.box{fill:rgba(255,255,255,0.04);stroke:#3f6c9e;stroke-width:1.5}
+.box-hi{fill:rgba(89,214,255,0.07);stroke:#59d6ff;stroke-width:1.5}
+.box-am{fill:rgba(255,194,103,0.07);stroke:#ffc267;stroke-width:1.5}
+.k{fill:#cfe0f2;font-family:monospace;font-size:11}
+.dk{fill:#8a9cba;font-family:monospace;font-size:10}
+.am{fill:#ffc267;font-family:monospace;font-size:10;font-weight:bold}
+.cy{fill:#59d6ff;font-family:monospace;font-size:10;font-weight:bold}
+.l{stroke:#59d6ff;stroke-width:1.5;fill:none}
+.la{stroke:#ffc267;stroke-width:1.5;fill:none}
+.lm{stroke:#8a9cba;stroke-width:1;stroke-dasharray:4 4;fill:none}
+</style>
+
+<!-- Vin -->
+<rect x="20" y="110" width="80" height="50" class="box"/>
+<text x="60" y="132" class="k" text-anchor="middle">Vin</text>
+<text x="60" y="148" class="dk" text-anchor="middle">7–40 V DC</text>
+
+<!-- Arrow Vin → LM2596 -->
+<line x1="102" y1="135" x2="155" y2="135" class="l"/>
+<polygon points="155,135 147,130 147,140" fill="#59d6ff"/>
+
+<!-- LM2596S-ADJ (highlighted) -->
+<rect x="158" y="85" width="150" height="100" class="box-hi"/>
+<text x="233" y="115" class="cy" text-anchor="middle">LM2596S-ADJ</text>
+<text x="233" y="135" class="k" text-anchor="middle">Buck Switching</text>
+<text x="233" y="152" class="k" text-anchor="middle">Regulator · 3A</text>
+<text x="233" y="170" class="dk" text-anchor="middle">150 kHz fixed fsw</text>
+
+<!-- Schottky diode (below LM2596) -->
+<line x1="233" y1="187" x2="233" y2="215" class="la"/>
+<rect x="195" y="218" width="76" height="40" class="box-am"/>
+<text x="233" y="234" class="am" text-anchor="middle">1N5822</text>
+<text x="233" y="248" class="dk" text-anchor="middle">Schottky</text>
+
+<!-- Arrow LM2596 → Inductor -->
+<line x1="310" y1="135" x2="350" y2="135" class="l"/>
+<polygon points="350,135 342,130 342,140" fill="#59d6ff"/>
+
+<!-- Inductor -->
+<rect x="353" y="108" width="80" height="54" class="box"/>
+<text x="393" y="132" class="k" text-anchor="middle">L1</text>
+<text x="393" y="150" class="dk" text-anchor="middle">470 uH</text>
+
+<!-- Arrow Inductor → Vout -->
+<line x1="435" y1="135" x2="470" y2="135" class="l"/>
+<polygon points="470,135 462,130 462,140" fill="#59d6ff"/>
+
+<!-- Vout -->
+<rect x="473" y="110" width="48" height="50" class="box"/>
+<text x="497" y="132" class="k" text-anchor="middle">Vout</text>
+<text x="497" y="148" class="dk" text-anchor="middle">adj.</text>
+
+<!-- Output caps -->
+<line x1="393" y1="164" x2="393" y2="198" class="lm"/>
+<rect x="355" y="200" width="76" height="36" class="box"/>
+<text x="393" y="216" class="k" text-anchor="middle">C3  220 uF</text>
+<text x="393" y="230" class="dk" text-anchor="middle">+ C2/C4 100 nF</text>
+
+<!-- Feedback path (R2 trimmer) -->
+<line x1="497" y1="162" x2="497" y2="260" class="la"/>
+<line x1="497" y1="260" x2="330" y2="260" class="la"/>
+<line x1="330" y1="260" x2="330" y2="187" class="la"/>
+<rect x="410" y="250" width="80" height="28" class="box-am"/>
+<text x="450" y="268" class="am" text-anchor="middle">R2 10k trim</text>
+
+<!-- Bottom label -->
+<text x="260" y="290" class="dk" text-anchor="middle">adjustable step-down · KiCad PCB design</text>
+</svg>

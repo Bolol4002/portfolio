@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buck Converter (LM2596S-ADJ) — Sayooj S</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="../index.html#hero" class="brand">SAYOOJ<b>S</b></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <div class="nav-links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="../resume.pdf" download class="nav-cta">Resume</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page pd">
+    <a class="back" href="../index.html#projects">← / Projects</a>
+    <div class="pd-head">
+      <h1>Buck Converter · LM2596S-ADJ</h1>
+      <div class="tags"><span>KiCad</span><span>PCB Design</span><span>Power Electronics</span></div>
+      <div class="pd-links">
+        <a href="https://github.com/Bolol4002/buck-coverter" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a>
+      </div>
+    </div>
+
+    <figure class="pd-fig">
+      <img src="../img/buck-converter/final_3d.png" alt="3D render of buck converter PCB">
+    </figure>
+
+    <section class="dsec">
+      <h2>Overview</h2>
+      <p>Adjustable step-down (buck) DC-DC converter PCB designed in <strong>KiCad</strong>, built around the
+      <strong>LM2596S-ADJ</strong> switching regulator. The board takes a higher DC input voltage (7–40 V) and
+      steps it down to an adjustable output voltage via a 10 k trimmer, capable of driving loads up to 3 A.
+      This was my first PCB design project.</p>
+    </section>
+
+    <section class="dsec">
+      <h2>Schematic</h2>
+      <figure class="pd-fig">
+        <img src="../img/buck-converter/schematic.png" alt="Buck converter schematic">
+      </figure>
+    </section>
+
+    <section class="dsec">
+      <h2>Key Components</h2>
+      <ul>
+        <li><strong>U1 — LM2596S-ADJ</strong> — Adjustable buck switching regulator, 150 kHz fixed frequency, up to 3 A output</li>
+        <li><strong>D1 — 1N5822</strong> — Schottky rectifier for freewheeling diode</li>
+        <li><strong>L1 — 470 uH</strong> — Power inductor (12 × 12 mm) for energy storage</li>
+        <li><strong>C1</strong> — Electrolytic input bulk capacitance</li>
+        <li><strong>C3 — 220 uF</strong> — Output bulk capacitance</li>
+        <li><strong>C2, C4 — 100 nF</strong> — Decoupling capacitors for noise suppression</li>
+        <li><strong>R2 — 10 k trimmer</strong> — Output voltage adjustment via feedback divider</li>
+        <li><strong>J1–J4</strong> — Solder wire pad connections for input and output</li>
+      </ul>
+    </section>
+
+    <section class="dsec">
+      <h2>PCB Layout</h2>
+      <figure class="pd-fig">
+        <img src="../img/buck-converter/pcb.png" alt="PCB layout of buck converter">
+      </figure>
+    </section>
+
+    <section class="dsec">
+      <h2>Tools &amp; Flow</h2>
+      <ul>
+        <li>Designed entirely in <strong>KiCad</strong> (schematic, PCB layout, 3D rendering)</li>
+        <li>Auto-routed using SPECCTRA DSN/SES flow</li>
+        <li>Includes complete KiCad project files (<code>.kicad_sch</code>, <code>.kicad_pcb</code>, <code>.kicad_pro</code>)</li>
+      </ul>
+      <p class="quiet">Status: first PCB design attempt · fully routed board with 3D render output.</p>
+    </section>
+  </div>
+
+  <footer>
+    <div class="foot">
+      <span class="fb">Sayooj<b>S</b> · Hardware Engineer</span>
+      <span>Electronics &amp; VLSI · KLU Hyderabad</span>
+      <span>© 2026 Sayooj S</span>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>
