@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CPU Performance Analyzer — Sayooj S</title>
+  <title>VLSI PD &amp; Automation Lab — Sayooj S</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="icon" type="image/x-icon" href="../favicon.ico">
 </head>
@@ -27,42 +27,39 @@
   <div class="page pd">
     <a class="back" href="../index.html#projects">← / Projects</a>
     <div class="pd-head">
-      <h1>CPU Performance Analyzer</h1>
-      <div class="tags"><span>Python</span><span>Perl</span><span>Computer Architecture</span></div>
+      <h1>VLSI PD &amp; Automation Lab</h1>
+      <div class="tags"><span>Python</span><span>Verilog</span><span>EDA Algorithms</span></div>
       <div class="pd-links">
-        <a href="https://github.com/Bolol4002/cpu-performance-analyzer" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a>
+        <a href="https://github.com/Bolol4002/VLSI-python_lab" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a>
       </div>
     </div>
 
     <figure class="pd-fig">
-      <img src="../img/projects/cpu-analyzer.svg" alt="CPI/IPC performance analysis flow">
+      <img src="../img/projects/vlsi-python-lab.svg" alt="VLSI PD automation algorithms flow">
     </figure>
 
     <section class="dsec">
       <h2>Overview</h2>
-      <p>A lightweight Python tool for <strong>cycle-level CPU performance calculation</strong>. Parses CPU execution logs
-      and computes CPI, IPC, stall cycles, and execution time — with configurable clock frequencies and detailed
-      instruction-breakdown reports.</p>
+      <p>Lab codes for the <strong>VLSI Physical Design and Automation</strong> course at KL University, Hyderabad —
+      a dual-track collection of EDA-algorithm implementations in Python and RTL lab experiments in Verilog.</p>
     </section>
 
     <section class="dsec">
-      <h2>Core Definitions Implemented</h2>
+      <h2>Contents</h2>
       <ul>
-        <li><strong>Instruction</strong> — an operation executed by the CPU (ADD, LOAD, MUL, …)</li>
-        <li><strong>Cycle</strong> — a single CPU clock tick</li>
-        <li><strong>Stall</strong> — a cycle where no useful instruction executes (hazards, dependencies, memory delays)</li>
-        <li><strong>CPI</strong> — Cycles Per Instruction (average)</li>
-        <li><strong>IPC</strong> — Instructions Per Cycle (reciprocal)</li>
+        <li><strong>PDA/</strong> — physical design automation algorithms in Python:
+          <span class="quiet">BFS, DFS, Dijkstra, Kruskal, Prim, Kernighan–Lin partitioning, simulated annealing, course-outcome notes</span></li>
+        <li><strong>SDEC/</strong> — 10 RTL lab experiments
+          (<code>Exp01.v … Exp10.sv</code>) with matching testbenches and a TCL script to run all simulations</li>
+        <li><strong>testing_and_verification/</strong> — VLSI testing study notes</li>
+        <li><strong>OOPS/</strong> — Java OOP lab (13 experiments)</li>
       </ul>
     </section>
 
     <section class="dsec">
-      <h2>Files &amp; Status</h2>
-      <ul>
-        <li><code>performance_analyzer.py</code> — the analyzer</li>
-        <li><code>sample_log.txt</code> — example execution log</li>
-        <li>Working tool; documented CPI / IPC / stall / time definitions</li>
-      </ul>
+      <h2>Purpose</h2>
+      <p>Hands-on grounding in the algorithmic core of physical design — graph search, routing, partitioning, and
+      optimization — paired with practical RTL verification experiments.</p>
     </section>
   </div>
 

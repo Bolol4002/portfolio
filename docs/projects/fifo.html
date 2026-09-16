@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Synchronous FIFO — Sayooj S</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="../index.html#hero" class="brand">SAYOOJ<b>S</b></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <div class="nav-links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="../resume.pdf" download class="nav-cta">Resume</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page pd">
+    <a class="back" href="../index.html#projects">← / Projects</a>
+    <div class="pd-head">
+      <h1>Synchronous FIFO</h1>
+      <div class="tags"><span>Verilog</span><span>Functional Coverage</span><span>Icarus Verilog</span></div>
+      <div class="pd-links">
+        <a href="https://github.com/Bolol4002/FIFO" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a>
+      </div>
+    </div>
+
+    <figure class="pd-fig">
+      <img src="../img/projects/fifo.svg" alt="Synchronous FIFO block diagram">
+    </figure>
+
+    <section class="dsec">
+      <h2>Overview</h2>
+      <p>RTL implementation of a FIFO (First-In, First-Out) queue — from the ZipCPU blog "Getting the Basic FIFO Right" —
+      used wherever producer speed ≠ consumer speed to absorb timing differences and prevent stalls
+      (CPU interrupts, SDRAM bursts, UART buffers, streaming).</p>
+    </section>
+
+    <section class="dsec">
+      <h2>Design</h2>
+      <ul>
+        <li><code>rtl/fifo.v</code> — 8-bit data path, 16 entries, count-based fill</li>
+        <li>Write / enqueue to tail, read / dequeue from head</li>
+        <li>Status: fill level, empty, full, overflow &amp; underflow flags</li>
+      </ul>
+    </section>
+
+    <section class="dsec">
+      <h2>Verification — The Coverage Mindset</h2>
+      <p>Documents the jump from <em>"does it work?"</em> to <em>"how do I prove I exercised all important behaviour?"</em>:</p>
+      <ul>
+        <li>Code coverage vs. functional coverage, UCDB concepts</li>
+        <li>Coverage counters: <code>cov_push</code>, <code>cov_pop</code>, <code>cov_full</code>, <code>cov_empty</code></li>
+        <li>Waveform red flags: count > DEPTH (bug), pointers moving while full (bug), wrong data order</li>
+        <li>Next steps documented: simultaneous rd/wr, pointer wraparound, randomized transactions, scoreboard, SV covergroups, UVM</li>
+      </ul>
+      <p class="quiet">Honest caveat in the repo: the original tutorial FIFO may mis-handle overflow/underflow; this repo is primarily educational.</p>
+    </section>
+  </div>
+
+  <footer>
+    <div class="foot">
+      <span class="fb">Sayooj<b>S</b> · Hardware Engineer</span>
+      <span>Electronics &amp; VLSI · KLU Hyderabad</span>
+      <span>© 2026 Sayooj S</span>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

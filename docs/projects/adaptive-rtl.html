@@ -11,75 +11,79 @@
 
   <nav class="topnav">
     <div class="topnav-inner">
-      <a href="../index.html" class="topnav-brand"><span>&gt;</span> sayooj</a>
+      <a href="../index.html#hero" class="brand">SAYOOJ<b>S</b></a>
       <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
-      <div class="topnav-links">
-        <a href="../index.html" class="tab">Home</a>
-        <a href="../about.html" class="tab">About</a>
-        <a href="../skills.html" class="tab">Skills</a>
-        <a href="../projects.html" class="tab active">Projects</a>
-        <a href="../education.html" class="tab">Education</a>
-        <a href="../contact.html" class="tab">Contact</a>
+      <div class="nav-links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="../resume.pdf" download class="nav-cta">Resume</a>
       </div>
     </div>
   </nav>
 
-  <div class="page project-detail">
-    <a href="../projects.html" class="back-link">&larr; All Projects</a>
-    <h1>Adaptive RTL Control Unit</h1>
-    <div class="tech-tags">
-      <span>SystemVerilog</span>
-      <span>Xilinx Vivado</span>
-      <span>Power-Aware Design</span>
+  <div class="page pd">
+    <a class="back" href="../index.html#projects">← / Projects</a>
+    <div class="pd-head">
+      <h1>Adaptive RTL Control Unit</h1>
+      <div class="tags"><span>Verilog</span><span>SystemVerilog</span><span>Vivado</span><span>Power-Aware Design</span></div>
+      <div class="pd-links">
+        <a href="https://github.com/Bolol4002/adaptive_RTL_coding" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a>
+      </div>
     </div>
 
-    <div class="detail-section">
+    <figure class="pd-fig">
+      <img src="../img/projects/adaptive-rtl.svg" alt="Adaptive control unit block diagram">
+    </figure>
+
+    <section class="dsec">
       <h2>Overview</h2>
-      <p>An adaptive control unit implemented at the RTL level that dynamically switches between two control strategies: a power-efficient mode and a high-performance mode. Demonstrates how RTL-level coding decisions significantly influence power and performance without modifying the datapath.</p>
-    </div>
+      <p>Traditional RTL uses fixed control logic that never adapts — wasting power or leaving performance on the table
+      as workloads change. This project builds an <strong>adaptive control unit</strong> at the RTL level that dynamically
+      switches between two strategies, proving that control-plane decisions significantly affect power and performance
+      <em>without modifying the datapath or underlying technology</em>.</p>
+    </section>
 
-    <div class="detail-section">
-      <h2>Design Concepts</h2>
+    <section class="dsec">
+      <h2>Design Concept</h2>
       <ul>
-        <li><strong>Power-Efficient Control Unit:</strong> Minimizes signal switching, uses conditional decoding and gated logic, optimized for low dynamic power consumption</li>
-        <li><strong>High-Performance Control Unit:</strong> Uses parallel decoding and precomputed control signals, minimizes critical path delay, higher throughput</li>
-        <li><strong>Adaptive Wrapper:</strong> Selects between the two units via a mode signal, enabling dynamic runtime switching</li>
+        <li><strong>Power-Efficient Control Unit</strong> — minimizes switching activity, conditional decoding, gated logic</li>
+        <li><strong>High-Performance Control Unit</strong> — parallel decoding, precomputed control signals, minimal critical path</li>
+        <li><strong>Adaptive Control Wrapper</strong> — selects between the two units via a mode signal at runtime</li>
       </ul>
-    </div>
+    </section>
 
-    <div class="detail-section">
-      <h2>Key Features</h2>
+    <section class="dsec">
+      <h2>Design Flow</h2>
       <ul>
-        <li>Two distinct RTL implementations with measurable power/performance trade-offs</li>
-        <li>Runtime mode switching without datapath modification</li>
-        <li>Full Vivado synthesis flow with power, timing, and resource analysis</li>
-        <li>Comparison metrics: dynamic power, LUT utilization, FF count, critical path delay, timing slack</li>
+        <li>Implement baseline control logic for instruction decoding</li>
+        <li>Develop two RTL variants (low-power, high-performance)</li>
+        <li>Integrate both into an adaptive control module</li>
+        <li>Simulate functional correctness</li>
+        <li>Synthesize with <strong>Xilinx Vivado</strong></li>
+        <li>Analyze and compare power, resource utilization, timing</li>
       </ul>
-    </div>
+    </section>
 
-    <div class="detail-section">
-      <h2>Modules</h2>
+    <section class="dsec">
+      <h2>Evaluation Metrics</h2>
       <ul>
-        <li><code>low_power_control_unit.sv</code> — Gated logic, conditional decoding</li>
-        <li><code>high_perf_control_unit.sv</code> — Parallel decoding, precomputed signals</li>
-        <li><code>adaptive_control_unit.sv</code> — Mode selection wrapper</li>
-        <li><code>top_adaptive_control.sv</code> — Top-level integration</li>
+        <li>Dynamic power (switching activity / energy)</li>
+        <li>LUT utilization &amp; flip-flop count</li>
+        <li>Critical-path delay (max frequency) &amp; timing slack</li>
       </ul>
-    </div>
-
-    <div class="detail-section">
-      <h2>Tools</h2>
-      <ul>
-        <li>HDL: SystemVerilog</li>
-        <li>Synthesis: Xilinx Vivado</li>
-        <li>Simulation: Vivado Simulator</li>
-      </ul>
-    </div>
+      <p class="quiet">Companion repo: UVM-style verification of the same unit — <a href="adaptive-rtl-uvm.html">see the verification project</a>.</p>
+    </section>
   </div>
 
   <footer>
-    <div>&copy; 2026 Sayooj S</div>
-    <div>Crafted with <span>precision</span></div>
+    <div class="foot">
+      <span class="fb">Sayooj<b>S</b> · Hardware Engineer</span>
+      <span>Electronics &amp; VLSI · KLU Hyderabad</span>
+      <span>© 2026 Sayooj S</span>
+    </div>
   </footer>
 
   <script src="../main.js"></script>

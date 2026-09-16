@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="300" viewBox="0 0 520 300"><style>
+.box{fill:rgba(255,255,255,0.04);stroke:#3f6c9e;stroke-width:1.5}
+.box-hi{fill:rgba(89,214,255,0.07);stroke:#59d6ff;stroke-width:1.5}
+.box-am{fill:rgba(255,194,103,0.07);stroke:#ffc267;stroke-width:1.5}
+.k{fill:#cfe0f2;font-family:monospace;font-size:11}
+.dk{fill:#8a9cba;font-family:monospace;font-size:10}
+.am{fill:#ffc267;font-family:monospace;font-size:10;font-weight:bold}
+.cy{fill:#59d6ff;font-family:monospace;font-size:10;font-weight:bold}
+.l{stroke:#59d6ff;stroke-width:1.5;fill:none}
+.la{stroke:#ffc267;stroke-width:1.5;fill:none}
+.lm{stroke:#8a9cba;stroke-width:1;stroke-dasharray:4 4;fill:none}
+</style>
+
+<rect x="30" y="130" width="120" height="56" class="box"/>
+<text x="90" y="153" class="k" text-anchor="middle">WRITE · tail</text>
+<text x="90" y="170" class="dk" text-anchor="middle">push (en)</text>
+<line x1="152" y1="158" x2="210" y2="158" class="l"/>
+<polygon points="210,158 200,153 200,163" fill="#59d6ff"/>
+<rect x="212" y="70" width="120" height="176" class="box-hi"/>
+<text x="272" y="140" class="cy" text-anchor="middle">FIFO ARRAY</text>
+<text x="272" y="158" class="k" text-anchor="middle">16 × 8 bit</text>
+<text x="272" y="176" class="dk" text-anchor="middle">count-based</text>
+<text x="272" y="230" class="am" text-anchor="middle">full / empty</text>
+<line x1="334" y1="158" x2="392" y2="158" class="l"/>
+<polygon points="392,158 382,153 382,163" fill="#59d6ff"/>
+<rect x="394" y="130" width="110" height="56" class="box"/>
+<text x="449" y="153" class="k" text-anchor="middle">READ · head</text>
+<text x="449" y="170" class="dk" text-anchor="middle">pop (rd)</text>
+<text x="272" y="34" class="k" font-family="monospace" font-size="11" text-anchor="middle">synchronous FIFO · producer speed ≠ consumer speed</text>
+<text x="272" y="265" class="dk" font-family="monospace" font-size="10" text-anchor="middle">overflow / underflow flags · coverage TB</text>
+</svg>

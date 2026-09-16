@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vlsi-agent · LLM Verification — Sayooj S</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="../index.html#hero" class="brand">SAYOOJ<b>S</b></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <div class="nav-links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="../resume.pdf" download class="nav-cta">Resume</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page pd">
+    <a class="back" href="../index.html#projects">← / Projects</a>
+    <div class="pd-head">
+      <h1>vlsi-agent · LLM-Powered Verification</h1>
+      <div class="tags"><span>Python</span><span>FastAPI</span><span>LLM</span><span>iverilog</span><span>VCD</span></div>
+      <div class="pd-links">
+        <a href="https://github.com/Bolol4002/vlsi-agent" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a>
+      </div>
+    </div>
+
+    <figure class="pd-fig">
+      <img src="../img/projects/vlsi-agent.svg" alt="LLM verification agent pipeline">
+    </figure>
+
+    <section class="dsec">
+      <h2>Overview</h2>
+      <p>An LLM-powered Verilog simulation agent that automatically <strong>generates testbenches, compiles, runs
+      simulations, and fixes failing test cases</strong>. Paste a Verilog module — the agent handles verification end to end.</p>
+    </section>
+
+    <section class="dsec">
+      <h2>Pipeline</h2>
+      <ol>
+        <li>Generates a testbench with an LLM (BluesMinds API / GLM-5.2)</li>
+        <li>Compiles with Icarus Verilog (<code>iverilog</code>)</li>
+        <li>Runs the simulation (<code>vvp</code>)</li>
+        <li>Analyzes PASS / FAIL results</li>
+        <li>Auto-fixes compile or test failures via LLM (up to 3 retries)</li>
+        <li>Renders waveforms (VCD) and an ideal-values table</li>
+        <li>Falls back to an exhaustive built-in testbench if all LLM attempts fail</li>
+      </ol>
+    </section>
+
+    <section class="dsec">
+      <h2>Architecture</h2>
+      <div class="stat-box">Browser (static/index.html)
+    │  POST /api/simulate { verilog_code }
+    ▼
+FastAPI (server.py :8000)
+    ├── LLM (BluesMinds API)  generate_testbench / analyze_failure / build_ideal_values
+    ├── Icarus Verilog          iverilog → vvp → wave.vcd + stdout
+    └── Response                logs, waveform_data, test_summary, ideal_values
+
+/api/simulate        POST   run simulation pipeline
+/api/waveform/{id}   GET    download raw VCD</div>
+    </section>
+
+    <section class="dsec">
+      <h2>Scope &amp; Status</h2>
+      <p>Currently supports <strong>combinational logic</strong> (gates, ALUs, muxes, decoders) with plans for sequential
+      designs. Backend-driven verification reproduces the classic write-RTL / auto-generate-tests / iterate-fixes flow in
+      seconds instead of hours.</p>
+    </section>
+  </div>
+
+  <footer>
+    <div class="foot">
+      <span class="fb">Sayooj<b>S</b> · Hardware Engineer</span>
+      <span>Electronics &amp; VLSI · KLU Hyderabad</span>
+      <span>© 2026 Sayooj S</span>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

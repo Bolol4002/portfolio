@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="300" viewBox="0 0 520 300"><style>
+.box{fill:rgba(255,255,255,0.04);stroke:#3f6c9e;stroke-width:1.5}
+.box-hi{fill:rgba(89,214,255,0.07);stroke:#59d6ff;stroke-width:1.5}
+.box-am{fill:rgba(255,194,103,0.07);stroke:#ffc267;stroke-width:1.5}
+.k{fill:#cfe0f2;font-family:monospace;font-size:11}
+.dk{fill:#8a9cba;font-family:monospace;font-size:10}
+.am{fill:#ffc267;font-family:monospace;font-size:10;font-weight:bold}
+.cy{fill:#59d6ff;font-family:monospace;font-size:10;font-weight:bold}
+.l{stroke:#59d6ff;stroke-width:1.5;fill:none}
+.la{stroke:#ffc267;stroke-width:1.5;fill:none}
+.lm{stroke:#8a9cba;stroke-width:1;stroke-dasharray:4 4;fill:none}
+</style>
+
+<rect x="20" y="70" width="150" height="110" class="box-hi"/>
+<text x="95" y="95" class="cy" text-anchor="middle">PicoRV32 CORE</text>
+<text x="95" y="112" class="dk" text-anchor="middle">RV32I · IF/ID/</text>
+<text x="95" y="126" class="dk" text-anchor="middle">EX/MEM/WB</text>
+<text x="95" y="168" class="k" text-anchor="middle">scalar baseline</text>
+<line x1="172" y1="125" x2="228" y2="125" class="l"/>
+<polygon points="228,125 218,120 218,130" fill="#59d6ff"/>
+<text x="200" y="112" class="am" text-anchor="middle">PCPI</text>
+<rect x="230" y="60" width="130" height="90" class="box-am"/>
+<text x="295" y="82" class="am" text-anchor="middle">ACCELERATOR</text>
+<text x="295" y="98" class="k" text-anchor="middle">MAC array 2/4/8</text>
+<text x="295" y="112" class="k" text-anchor="middle">INT8/16/32</text>
+<text x="295" y="126" class="dk" text-anchor="middle">scratchpad + ctrl</text>
+<line x1="230" y1="115" x2="170" y2="115" class="la"/>
+<line x1="228" y1="125" x2="295" y2="125" class="lm"/>
+<rect x="230" y="180" width="130" height="40" class="box"/>
+<text x="295" y="204" class="k" text-anchor="middle">custom ISA</text>
+<line x1="295" y1="180" x2="295" y2="152" class="l"/>
+<rect x="20" y="210" width="340" height="40" class="box"/>
+<text x="190" y="234" class="k" text-anchor="middle">Basys3 FPGA · Artix-7 XC7A35T · Vivado 2025.2</text>
+<text x="430" y="150" class="dk" text-anchor="middle">benchmarks:</text>
+<text x="430" y="168" class="dk" text-anchor="middle">matmul · conv</text>
+<text x="430" y="186" class="dk" text-anchor="middle">FIR · dot · CNN</text>
+</svg>

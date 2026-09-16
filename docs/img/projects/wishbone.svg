@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="300" viewBox="0 0 520 300"><style>
+.box{fill:rgba(255,255,255,0.04);stroke:#3f6c9e;stroke-width:1.5}
+.box-hi{fill:rgba(89,214,255,0.07);stroke:#59d6ff;stroke-width:1.5}
+.box-am{fill:rgba(255,194,103,0.07);stroke:#ffc267;stroke-width:1.5}
+.k{fill:#cfe0f2;font-family:monospace;font-size:11}
+.dk{fill:#8a9cba;font-family:monospace;font-size:10}
+.am{fill:#ffc267;font-family:monospace;font-size:10;font-weight:bold}
+.cy{fill:#59d6ff;font-family:monospace;font-size:10;font-weight:bold}
+.l{stroke:#59d6ff;stroke-width:1.5;fill:none}
+.la{stroke:#ffc267;stroke-width:1.5;fill:none}
+.lm{stroke:#8a9cba;stroke-width:1;stroke-dasharray:4 4;fill:none}
+</style>
+
+<rect x="40" y="70" width="150" height="120" class="box-hi"/>
+<text x="115" y="95" class="cy" text-anchor="middle">WISHBONE MASTER</text>
+<text x="115" y="115" class="k" text-anchor="middle">cyc · stb · we</text>
+<text x="115" y="131" class="k" text-anchor="middle">adr · dat_o</text>
+<text x="115" y="147" class="am" text-anchor="middle">dat_i · ack</text>
+<text x="115" y="170" class="dk" text-anchor="middle">awaits ack then</text>
+<text x="115" y="184" class="dk" text-anchor="middle">de-asserts cyc/stb</text>
+<line x1="192" y1="130" x2="248" y2="130" class="l"/>
+<polygon points="248,130 238,125 238,135" fill="#59d6ff"/>
+<line x1="192" y1="145" x2="270" y2="145" class="la"/>
+<rect x="250" y="60" width="220" height="120" class="box"/>
+<text x="360" y="85" class="k" text-anchor="middle">WISHBONE SLAVE</text>
+<text x="360" y="108" class="k" text-anchor="middle">256 × 8-bit memory</text>
+<text x="360" y="124" class="dk" text-anchor="middle">write: memory[adr] ← dat_o</text>
+<text x="360" y="140" class="dk" text-anchor="middle">read:  dat_i ← memory[adr]</text>
+<text x="360" y="162" class="am" text-anchor="middle">ack on clock edge</text>
+<text x="115" y="240" class="dk" text-anchor="middle" font-family="monospace" font-size="10">read/write bus cycles · Icarus Verilog + VCD</text>
+</svg>

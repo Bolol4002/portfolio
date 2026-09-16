@@ -11,67 +11,69 @@
 
   <nav class="topnav">
     <div class="topnav-inner">
-      <a href="../index.html" class="topnav-brand"><span>&gt;</span> sayooj</a>
+      <a href="../index.html#hero" class="brand">SAYOOJ<b>S</b></a>
       <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
-      <div class="topnav-links">
-        <a href="../index.html" class="tab">Home</a>
-        <a href="../about.html" class="tab">About</a>
-        <a href="../skills.html" class="tab">Skills</a>
-        <a href="../projects.html" class="tab active">Projects</a>
-        <a href="../education.html" class="tab">Education</a>
-        <a href="../contact.html" class="tab">Contact</a>
+      <div class="nav-links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="../resume.pdf" download class="nav-cta">Resume</a>
       </div>
     </div>
   </nav>
 
-  <div class="page project-detail">
-    <a href="../projects.html" class="back-link">&larr; All Projects</a>
-    <h1>Fault-Tolerant ADC</h1>
-    <div class="tech-tags">
-      <span>QSPICE</span>
-      <span>Analog Design</span>
-      <span>IoT</span>
+  <div class="page pd">
+    <a class="back" href="../index.html#projects">← / Projects</a>
+    <div class="pd-head">
+      <h1>Fault-Tolerant ADC · Analog</h1>
+      <div class="tags"><span>QSPICE</span><span>Analog Design</span><span>Mixed-Signal</span></div>
+      <div class="pd-links">
+        <a href="https://github.com/Bolol4002/Fault_Tolerant_ADC" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a>
+      </div>
     </div>
 
-    <div class="detail-section">
+    <figure class="pd-fig">
+      <img src="../img/projects/fault-tolerant-adc.svg" alt="Fault-tolerant ADC block diagram">
+    </figure>
+
+    <section class="dsec">
       <h2>Overview</h2>
-      <p>A fault-tolerant analog-to-digital converter designed for edge IoT devices. Built entirely in QSPICE, this project implements a complete ADC pipeline with an added fault detection and protection block that monitors supply voltage integrity.</p>
-    </div>
+      <p>A fault-tolerant ADC block for an edge IoT device, designed in <strong>QSPICE</strong>. The design layers a
+      fault-detection / protection stage onto a comparator-based flash ADC so it survives a bad reference voltage.</p>
+    </section>
 
-    <div class="detail-section">
-      <h2>Architecture</h2>
+    <section class="dsec">
+      <h2>Blocks</h2>
       <ul>
-        <li><strong>Comparator:</strong> Ideal comparator subcircuit comparing analog input against reference voltage</li>
-        <li><strong>Priority Encoder:</strong> 8-to-3 priority encoder converting comparator outputs to 3-bit digital code</li>
-        <li><strong>Fault Detection Block:</strong> Monitors Vref (7V–9V safe range), raises error flag and blocks signal on out-of-range conditions</li>
-        <li><strong>Resistor Ladder:</strong> Generates reference voltage levels for the comparators</li>
+        <li><strong>Comparator</strong> — ideal subckt, 10 MΩ input resistance, Vhigh / Vlow outputs</li>
+        <li><strong>8-to-3 Priority Encoder</strong> — encodes 8 comparator outputs into a 3-bit code (standard priority logic)</li>
+        <li><strong>Fault detection module</strong> — checks Vref against a safe window of <strong>7 V – 9 V</strong>:
+          <ul>
+            <li><code>Bfault_detect</code> — fault = <code>(V(vin) &gt; 7) &amp;&amp; (V(vin) &lt; 9) ? 0 : 1</code></li>
+            <li><code>Berror</code> — outputs 1 V error flag on fault, 0 V normal</li>
+            <li><code>Bgate</code> — passes Vref to the comparator ladder when normal, 0 V on fault</li>
+          </ul>
+        </li>
+        <li>Filtered with a 1 kΩ / 1 pF RC</li>
       </ul>
-    </div>
+    </section>
 
-    <div class="detail-section">
-      <h2>Key Features</h2>
-      <ul>
-        <li>Complete ADC pipeline: analog input → comparators → priority encoder → digital output</li>
-        <li>Fault detection with automatic error flagging and signal isolation</li>
-        <li>Safe voltage range monitoring (7V–9V) for IoT edge reliability</li>
-        <li>Subcircuit-based modular design for reusability</li>
-      </ul>
-    </div>
-
-    <div class="detail-section">
-      <h2>Team</h2>
-      <ul>
-        <li>Sayooj S</li>
-        <li>Rohan Madanu</li>
-        <li>Pranav Madanu</li>
-        <li>Rizwan</li>
-      </ul>
-    </div>
+    <section class="dsec">
+      <h2>Behaviour &amp; Deliverables</h2>
+      <p>If Vref is within range the value proceeds to the resistor ladder; otherwise it is blocked and an error flag is
+      raised. Completed as a 3-1 PBL project with teammates; images included for the comparator, priority encoder,
+      fault module, assembled ADC, and the full fault-tolerant ADC.</p>
+    </section>
   </div>
 
   <footer>
-    <div>&copy; 2026 Sayooj S</div>
-    <div>Crafted with <span>precision</span></div>
+    <div class="foot">
+      <span class="fb">Sayooj<b>S</b> · Hardware Engineer</span>
+      <span>Electronics &amp; VLSI · KLU Hyderabad</span>
+      <span>© 2026 Sayooj S</span>
+    </div>
   </footer>
 
   <script src="../main.js"></script>

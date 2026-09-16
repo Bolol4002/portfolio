@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UVM Verification · Adaptive Control Unit — Sayooj S</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="../index.html#hero" class="brand">SAYOOJ<b>S</b></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <div class="nav-links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="../resume.pdf" download class="nav-cta">Resume</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page pd">
+    <a class="back" href="../index.html#projects">← / Projects</a>
+    <div class="pd-head">
+      <h1>UVM Verification · Adaptive Control Unit</h1>
+      <div class="tags"><span>SystemVerilog</span><span>UVM</span><span>Verilator</span><span>GTKWave</span></div>
+      <div class="pd-links">
+        <a href="https://github.com/Bolol4002/adaptive_RTL_coding_UVM_Verification" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a>
+      </div>
+    </div>
+
+    <figure class="pd-fig">
+      <img src="../img/projects/adaptive-rtl-uvm.svg" alt="UVM verification environment diagram">
+    </figure>
+
+    <section class="dsec">
+      <h2>Overview</h2>
+      <p>UVM-style verification environment for an adaptive control unit that dynamically switches between
+      <strong>low-power</strong> (<code>mode=0</code>) and <strong>high-performance</strong> (<code>mode=1</code>)
+      control strategies based on a runtime config signal. Verification completed with all 14 test cases passing.</p>
+    </section>
+
+    <section class="dsec">
+      <h2>Hierarchy</h2>
+      <div class="stat-box">top_adaptive_control
+    └── adaptive_control_unit
+            ├── low_power_control_unit      (mode=0)
+            └── high_perf_control_unit     (mode=1)</div>
+    </section>
+
+    <section class="dsec">
+      <h2>Interface</h2>
+      <ul>
+        <li>Inputs: <code>clk_i</code>, <code>rst_n_i</code>, <code>opcode_i[3]</code>, <code>valid_i</code>, <code>mode_i</code></li>
+        <li>Outputs: <code>reg_write_o</code>, <code>mem_read_o</code>, <code>mem_write_o</code>, <code>alu_src_o</code>,
+        <code>alu_op_o[3]</code>, <code>branch_o</code>, <code>jump_o</code>, plus LED mode indicators</li>
+        <li>Opcodes: NOP, ADD, SUB, AND, OR (3'b000–3'b100)</li>
+      </ul>
+    </section>
+
+    <section class="dsec">
+      <h2>Verification Environment</h2>
+      <ul>
+        <li>UVM-style <strong>driver / monitor / scoreboard</strong></li>
+        <li>Three test phases: low-power mode (all 5 opcodes), high-performance mode, and <strong>dynamic mode switching</strong></li>
+        <li>Build &amp; simulation via Verilator + GTKWave (<code>make sim</code> / <code>make run</code> / <code>make wave</code> / <code>make comp</code>)</li>
+      </ul>
+    </section>
+
+    <section class="dsec">
+      <h2>Results</h2>
+      <div class="stat-box">Test suite run to completion
+  Total tests : 14
+  Passed      : 14
+  Failed      : 0</div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="foot">
+      <span class="fb">Sayooj<b>S</b> · Hardware Engineer</span>
+      <span>Electronics &amp; VLSI · KLU Hyderabad</span>
+      <span>© 2026 Sayooj S</span>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

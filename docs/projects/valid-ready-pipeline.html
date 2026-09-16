@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valid/Ready Pipeline Stage — Sayooj S</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="../index.html#hero" class="brand">SAYOOJ<b>S</b></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <div class="nav-links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="../resume.pdf" download class="nav-cta">Resume</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page pd">
+    <a class="back" href="../index.html#projects">← / Projects</a>
+    <div class="pd-head">
+      <h1>Valid/Ready Pipeline Stage</h1>
+      <div class="tags"><span>SystemVerilog</span><span>cocotb</span><span>Verilator</span><span>Handshake</span></div>
+      <div class="pd-links">
+        <a href="https://github.com/Bolol4002/valid_ready_pipeline" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a>
+      </div>
+    </div>
+
+    <figure class="pd-fig">
+      <img src="../img/projects/valid-ready-pipeline.svg" alt="Valid/ready handshake diagram">
+    </figure>
+
+    <section class="dsec">
+      <h2>Overview</h2>
+      <p>A single pipeline stage implementing the classic <strong>valid/ready</strong> flow-control protocol used across
+      hardware streaming interfaces:</p>
+      <ul>
+        <li><code>valid</code> (producer) — "I have valid data on <code>data</code>"</li>
+        <li><code>ready</code> (consumer) — "I can accept data now"</li>
+        <li>A transfer happens when both are asserted on the same clock edge</li>
+      </ul>
+      <p>The stage holds one data word and supports <strong>bubble-through</strong>: when its data is accepted downstream it
+      can accept new input in the same cycle.</p>
+    </section>
+
+    <section class="dsec">
+      <h2>DUT Behaviour</h2>
+      <ul>
+        <li><code>ready_in = ~valid_reg || ready_out</code> — accepts when empty OR when downstream is accepting</li>
+        <li><code>valid_out = valid_reg</code>, <code>data_out = data_reg</code></li>
+        <li>Reset clears the stage</li>
+        <li>Capture and forwarding can happen in the same cycle to avoid deadlocks</li>
+      </ul>
+    </section>
+
+    <section class="dsec">
+      <h2>Structure &amp; Verification</h2>
+      <ul>
+        <li><code>src/valid_ready_single.sv</code> — parameterizable-width (<code>WIDTH=8</code>) DUT</li>
+        <li><code>tb/test_valid_ready.py</code> — cocotb testbench verifying functionality and <strong>back-pressure behaviour</strong></li>
+        <li>Runs with Verilator via <code>Makefile</code>; pinned cocotb dependency</li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    <div class="foot">
+      <span class="fb">Sayooj<b>S</b> · Hardware Engineer</span>
+      <span>Electronics &amp; VLSI · KLU Hyderabad</span>
+      <span>© 2026 Sayooj S</span>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

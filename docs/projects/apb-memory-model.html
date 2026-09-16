@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMBA APB Memory Model — Sayooj S</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="../index.html#hero" class="brand">SAYOOJ<b>S</b></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <div class="nav-links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="../resume.pdf" download class="nav-cta">Resume</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page pd">
+    <a class="back" href="../index.html#projects">← / Projects</a>
+    <div class="pd-head">
+      <h1>AMBA APB Memory Model</h1>
+      <div class="tags"><span>SystemVerilog</span><span>SVA</span><span>Random Testing</span><span>Scoreboard</span></div>
+      <div class="pd-links">
+        <a href="https://github.com/Bolol4002/apb_memory_model" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a>
+      </div>
+    </div>
+
+    <figure class="pd-fig">
+      <img src="../img/projects/apb-memory-model.svg" alt="APB memory model transfer diagram">
+    </figure>
+
+    <section class="dsec">
+      <h2>Overview</h2>
+      <p>An APB (Advanced Peripheral Bus) memory design plus a student-level verification environment combining three
+      industry-style techniques: <strong>directed tests</strong>, <strong>assertions (protocol checking)</strong>, and
+      <strong>constrained random generation with self-checking</strong>.</p>
+    </section>
+
+    <section class="dsec">
+      <h2>DUT Behaviour</h2>
+      <ul>
+        <li>8-bit memory with 128 valid locations (0–127)</li>
+        <li>Reset clears memory and outputs</li>
+        <li><code>load</code> reads <code>image_i.hex</code> via <code>$readmemh</code>; <code>fetch</code> dumps via <code>$writememh</code></li>
+        <li>Write when <code>psel &amp;&amp; penable &amp;&amp; pwrite</code>; read when <code>psel &amp;&amp; penable &amp;&amp; !pwrite</code></li>
+        <li><code>pslverr</code> asserted for invalid addresses (<code>paddr ≥ 128</code>)</li>
+      </ul>
+    </section>
+
+    <section class="dsec">
+      <h2>Verification Architecture</h2>
+      <ul>
+        <li><strong>Transaction layer</strong> — <code>apb_write()</code> / <code>apb_read()</code> implement 2-phase setup → access transfers</li>
+        <li><strong>Directed tests</strong> — normal + invalid-address paths</li>
+        <li><strong>SVA assertions</strong> — <code>penable_implies_psel</code>, <code>ctrl_stable_in_access</code>, <code>pready_only_when_enable</code></li>
+        <li><strong>Random traffic generator</strong> — 50 random ops, self-checked against a <code>ref_mem[0:127]</code> scoreboard</li>
+        <li>PASS / FAIL summary reporting</li>
+      </ul>
+    </section>
+
+    <section class="dsec">
+      <h2>Run</h2>
+      <div class="stat-box">iverilog -g2012 -o apb_tb design.sv testbench.sv
+vvp apb_tb
+gtkwave apb_memory.vcd</div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="foot">
+      <span class="fb">Sayooj<b>S</b> · Hardware Engineer</span>
+      <span>Electronics &amp; VLSI · KLU Hyderabad</span>
+      <span>© 2026 Sayooj S</span>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

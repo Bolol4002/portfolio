@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="300" viewBox="0 0 520 300"><style>
+.box{fill:rgba(255,255,255,0.04);stroke:#3f6c9e;stroke-width:1.5}
+.box-hi{fill:rgba(89,214,255,0.07);stroke:#59d6ff;stroke-width:1.5}
+.box-am{fill:rgba(255,194,103,0.07);stroke:#ffc267;stroke-width:1.5}
+.k{fill:#cfe0f2;font-family:monospace;font-size:11}
+.dk{fill:#8a9cba;font-family:monospace;font-size:10}
+.am{fill:#ffc267;font-family:monospace;font-size:10;font-weight:bold}
+.cy{fill:#59d6ff;font-family:monospace;font-size:10;font-weight:bold}
+.l{stroke:#59d6ff;stroke-width:1.5;fill:none}
+.la{stroke:#ffc267;stroke-width:1.5;fill:none}
+.lm{stroke:#8a9cba;stroke-width:1;stroke-dasharray:4 4;fill:none}
+</style>
+
+<rect x="30" y="120" width="110" height="60" class="box"/>
+<text x="85" y="144" class="k" text-anchor="middle">PRODUCER</text>
+<text x="85" y="162" class="dk" text-anchor="middle">valid_in</text>
+<line x1="142" y1="140" x2="205" y2="140" class="l"/>
+<polygon points="205,140 195,135 195,145" fill="#59d6ff"/>
+<rect x="207" y="100" width="120" height="80" class="box-hi"/>
+<text x="267" y="122" class="cy" text-anchor="middle">STAGE</text>
+<text x="267" y="138" class="k" text-anchor="middle">data_reg [WIDTH]</text>
+<text x="267" y="154" class="dk" text-anchor="middle">bubble-through</text>
+<line x1="329" y1="140" x2="392" y2="140" class="l"/>
+<polygon points="392,140 382,135 382,145" fill="#59d6ff"/>
+<rect x="394" y="120" width="100" height="60" class="box"/>
+<text x="444" y="144" class="k" text-anchor="middle">CONSUMER</text>
+<text x="444" y="162" class="dk" text-anchor="middle">ready_out</text>
+<line x1="392" y1="160" x2="329" y2="160" class="la"/>
+<text x="360" y="222" class="am" text-anchor="middle">transfer ⇔ valid ∧ ready</text>
+<line x1="205" y1="200" x2="259" y2="200" class="lm"/>
+<text x="20" y="250" class="dk">clock-aligned handshake · back-pressure verified</text>
+</svg>

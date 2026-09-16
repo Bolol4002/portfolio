@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MIPS32 ISA Study — Sayooj S</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="../index.html#hero" class="brand">SAYOOJ<b>S</b></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <div class="nav-links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="../resume.pdf" download class="nav-cta">Resume</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page pd">
+    <a class="back" href="../index.html#projects">← / Projects</a>
+    <div class="pd-head">
+      <h1>MIPS32 ISA Study</h1>
+      <div class="tags"><span>MIPS32</span><span>Computer Architecture</span></div>
+      <div class="pd-links">
+        <a href="https://github.com/Bolol4002/MIPS32" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a>
+      </div>
+    </div>
+
+    <figure class="pd-fig">
+      <img src="../img/projects/mips32.svg" alt="MIPS 5-stage pipeline diagram">
+    </figure>
+
+    <section class="dsec">
+      <h2>Overview</h2>
+      <p>Study notes and roadmap for building a subset of the MIPS32 ISA — architecture fundamentals, instruction
+      encoding, and the classic 5-stage pipeline. Implementation planning in progress.</p>
+    </section>
+
+    <section class="dsec">
+      <h2>MIPS32 Basics</h2>
+      <ul>
+        <li>32 general-purpose registers (R0–R31), 32-bit PC</li>
+        <li>No flag register; limited addressing modes</li>
+        <li>Only load / store instructions access memory</li>
+        <li>Word-addressable 32-bit memory space</li>
+      </ul>
+    </section>
+
+    <section class="dsec">
+      <h2>Instruction Subset</h2>
+      <ul>
+        <li>Load / store: <code>LW R2,124(R8)</code>, <code>SW R5,-10(R25)</code></li>
+        <li>Arithmetic / logic: <code>ADD</code>, <code>SUB</code>, <code>AND</code>, <code>OR</code>, <code>MUL</code>, <code>SLT</code></li>
+        <li>Immediates: addi, subi, slti and friends</li>
+        <li>R / I / J-type encoding formats with decoded opcodes (add 000000 … hlt 111111; lw 001000 … beqz 001110)</li>
+      </ul>
+    </section>
+
+    <section class="dsec">
+      <h2>5-Stage Pipeline Study</h2>
+      <p>IF (fetch) → ID (decode / register fetch) → EX (ALU / effective address) → MEM (memory access / branch
+      completion) → WB (write back). Instruction fetch updates the NPC (<code>NPC ← PC+1</code>) and decodes in parallel
+      with register reads.</p>
+    </section>
+  </div>
+
+  <footer>
+    <div class="foot">
+      <span class="fb">Sayooj<b>S</b> · Hardware Engineer</span>
+      <span>Electronics &amp; VLSI · KLU Hyderabad</span>
+      <span>© 2026 Sayooj S</span>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

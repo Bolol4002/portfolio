@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="300" viewBox="0 0 520 300"><style>
+.box{fill:rgba(255,255,255,0.04);stroke:#3f6c9e;stroke-width:1.5}
+.box-hi{fill:rgba(89,214,255,0.07);stroke:#59d6ff;stroke-width:1.5}
+.box-am{fill:rgba(255,194,103,0.07);stroke:#ffc267;stroke-width:1.5}
+.k{fill:#cfe0f2;font-family:monospace;font-size:11}
+.dk{fill:#8a9cba;font-family:monospace;font-size:10}
+.am{fill:#ffc267;font-family:monospace;font-size:10;font-weight:bold}
+.cy{fill:#59d6ff;font-family:monospace;font-size:10;font-weight:bold}
+.l{stroke:#59d6ff;stroke-width:1.5;fill:none}
+.la{stroke:#ffc267;stroke-width:1.5;fill:none}
+.lm{stroke:#8a9cba;stroke-width:1;stroke-dasharray:4 4;fill:none}
+</style>
+
+<rect x="30" y="110" width="120" height="70" class="box"/>
+<text x="90" y="134" class="k" text-anchor="middle">CPU EXEC LOG</text>
+<text x="90" y="152" class="dk" text-anchor="middle">instructions · cycles</text>
+<text x="90" y="166" class="dk" text-anchor="middle">stalls</text>
+<line x1="152" y1="145" x2="210" y2="145" class="l"/>
+<polygon points="210,145 200,140 200,150" fill="#59d6ff"/>
+<rect x="212" y="50" width="220" height="110" class="box-hi"/>
+<text x="322" y="76" class="cy" text-anchor="middle">ANALYZER</text>
+<text x="322" y="98" class="k" text-anchor="middle">CPI = cycles / instr</text>
+<text x="322" y="116" class="k" text-anchor="middle">IPC = 1 / CPI</text>
+<text x="322" y="134" class="k" text-anchor="middle">time = cycles × 1/f_clk</text>
+<line x1="434" y1="105" x2="470" y2="105" class="l"/>
+<rect x="30" y="220" width="440" height="50" class="box"/>
+<text x="250" y="240" class="k" text-anchor="middle" font-family="monospace" font-size="10">REPORT · CPI/IPC · stall cycles · per-instruction breakdown</text>
+<text x="250" y="256" class="dk" font-family="monospace" font-size="9" text-anchor="middle">configurable clock frequency</text>
+<line x1="322" y1="162" x2="322" y2="220" class="lm"/>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="300" viewBox="0 0 520 300"><style>
+.box{fill:rgba(255,255,255,0.04);stroke:#3f6c9e;stroke-width:1.5}
+.box-hi{fill:rgba(89,214,255,0.07);stroke:#59d6ff;stroke-width:1.5}
+.box-am{fill:rgba(255,194,103,0.07);stroke:#ffc267;stroke-width:1.5}
+.k{fill:#cfe0f2;font-family:monospace;font-size:11}
+.dk{fill:#8a9cba;font-family:monospace;font-size:10}
+.am{fill:#ffc267;font-family:monospace;font-size:10;font-weight:bold}
+.cy{fill:#59d6ff;font-family:monospace;font-size:10;font-weight:bold}
+.l{stroke:#59d6ff;stroke-width:1.5;fill:none}
+.la{stroke:#ffc267;stroke-width:1.5;fill:none}
+.lm{stroke:#8a9cba;stroke-width:1;stroke-dasharray:4 4;fill:none}
+</style>
+
+<rect x="30" y="90" width="130" height="110" class="box-hi"/>
+<text x="95" y="116" class="cy" text-anchor="middle">APB MASTER</text>
+<text x="95" y="138" class="k" text-anchor="middle">psel penable pwrite</text>
+<text x="95" y="154" class="k" text-anchor="middle">paddr pwdata</text>
+<text x="95" y="170" class="am" text-anchor="middle">prdata pslverr</text>
+<line x1="162" y1="145" x2="240" y2="145" class="l"/>
+<polygon points="240,145 230,140 230,150" fill="#59d6ff"/>
+<rect x="242" y="60" width="150" height="110" class="box"/>
+<text x="317" y="86" class="k" text-anchor="middle">apb_memory DUT</text>
+<text x="317" y="106" class="dk" text-anchor="middle">8-bit · 128 locations</text>
+<text x="317" y="122" class="dk" text-anchor="middle">pslverr if paddr ≥ 128</text>
+<text x="317" y="150" class="dk" text-anchor="middle">setup → access</text>
+<line x1="394" y1="145" x2="440" y2="145" class="l"/>
+<line x1="275" y1="60" x2="275" y2="45" class="lm"/><line x1="275" y1="45" x2="350" y2="45" class="lm"/>
+<line x1="350" y1="45" x2="350" y2="228" class="l"/><line x1="350" y1="228" x2="420" y2="228" class="l"/>
+<rect x="420" y="200" width="90" height="56" class="box-am"/>
+<text x="465" y="222" class="am" text-anchor="middle">SCOREBOARD</text>
+<text x="465" y="238" class="dk" text-anchor="middle">ref_mem[0:127]</text>
+<text x="178" y="270" class="dk" font-family="monospace" font-size="10">SVA: penable⇒psel · ctrl stable · pready only in enable · random traffic</text>
+</svg>

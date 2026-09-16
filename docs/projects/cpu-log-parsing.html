@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CPU Performance Analyzer — Sayooj S</title>
+  <title>CPU Log Parsing Toolkit — Sayooj S</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="icon" type="image/x-icon" href="../favicon.ico">
 </head>
@@ -27,41 +27,39 @@
   <div class="page pd">
     <a class="back" href="../index.html#projects">← / Projects</a>
     <div class="pd-head">
-      <h1>CPU Performance Analyzer</h1>
-      <div class="tags"><span>Python</span><span>Perl</span><span>Computer Architecture</span></div>
+      <h1>CPU Log Parsing Toolkit</h1>
+      <div class="tags"><span>Python</span><span>Regex</span><span>Automation</span></div>
       <div class="pd-links">
-        <a href="https://github.com/Bolol4002/cpu-performance-analyzer" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a>
+        <a href="https://github.com/Bolol4002/python_based_log_parsing" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a>
       </div>
     </div>
 
     <figure class="pd-fig">
-      <img src="../img/projects/cpu-analyzer.svg" alt="CPI/IPC performance analysis flow">
+      <img src="../img/projects/cpu-log-parsing.svg" alt="CPU log parsing diagram">
     </figure>
 
     <section class="dsec">
       <h2>Overview</h2>
-      <p>A lightweight Python tool for <strong>cycle-level CPU performance calculation</strong>. Parses CPU execution logs
-      and computes CPI, IPC, stall cycles, and execution time — with configurable clock frequencies and detailed
-      instruction-breakdown reports.</p>
+      <p>A Python log-parsing script to automate <strong>opcode profiling, cycle extraction, and performance-summary
+      generation</strong> using regular expressions and data structures. Companion tool to the CPU performance analyzer —
+      same theme of mining CPU execution traces for architecture-level insight.</p>
     </section>
 
     <section class="dsec">
-      <h2>Core Definitions Implemented</h2>
+      <h2>Files</h2>
       <ul>
-        <li><strong>Instruction</strong> — an operation executed by the CPU (ADD, LOAD, MUL, …)</li>
-        <li><strong>Cycle</strong> — a single CPU clock tick</li>
-        <li><strong>Stall</strong> — a cycle where no useful instruction executes (hazards, dependencies, memory delays)</li>
-        <li><strong>CPI</strong> — Cycles Per Instruction (average)</li>
-        <li><strong>IPC</strong> — Instructions Per Cycle (reciprocal)</li>
+        <li><code>parse_cpu_log.py</code> — the parser</li>
+        <li><code>cpu_log.txt</code> — example CPU execution log</li>
+        <li>Working script; automation-first design</li>
       </ul>
     </section>
 
     <section class="dsec">
-      <h2>Files &amp; Status</h2>
+      <h2>What It Does</h2>
       <ul>
-        <li><code>performance_analyzer.py</code> — the analyzer</li>
-        <li><code>sample_log.txt</code> — example execution log</li>
-        <li>Working tool; documented CPI / IPC / stall / time definitions</li>
+        <li>Profiles opcode distributions from execution traces</li>
+        <li>Extracts per-instruction cycle data</li>
+        <li>Generates performance summary reports automatically</li>
       </ul>
     </section>
   </div>

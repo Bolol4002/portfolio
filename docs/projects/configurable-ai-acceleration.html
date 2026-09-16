@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configurable AI Acceleration — Sayooj S</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="../index.html#hero" class="brand">SAYOOJ<b>S</b></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <div class="nav-links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="../resume.pdf" download class="nav-cta">Resume</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page pd">
+    <a class="back" href="../index.html#projects">← / Projects</a>
+    <div class="pd-head">
+      <h1>Configurable AI Acceleration Extension</h1>
+      <div class="tags"><span>Verilog</span><span>PicoRV32</span><span>Vivado 2025.2</span><span>Artix-7 XC7A35T</span><span>RISC-V</span></div>
+      <div class="pd-links">
+        <a href="https://github.com/Bolol4002/configurable_AI_Acceleration" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a>
+      </div>
+    </div>
+
+    <figure class="pd-fig">
+      <img src="../img/projects/configurable-ai-acceleration.svg" alt="AI accelerator co-processor diagram">
+    </figure>
+
+    <section class="dsec">
+      <h2>Overview</h2>
+      <p>Research project to design, integrate, and evaluate a <strong>configurable MAC-based AI accelerator</strong> with a
+      PicoRV32 RISC-V core on the Digilent Basys 3 FPGA. The accelerator is driven by custom RISC-V instructions and
+      quantified across multiple accelerator configurations and benchmark workloads.</p>
+      <p>Embedded scalar cores execute data-parallel AI workloads (matrix multiply, convolution, FIR, image filters) as long
+      load / multiply / add sequences — giving poor throughput and energy efficiency. Existing accelerators are typically
+      fixed-configuration and hard to drop into open-source cores. This project closes that gap.</p>
+    </section>
+
+    <section class="dsec">
+      <h2>Key Features</h2>
+      <ul>
+        <li>Parameterizable MAC-array engine — <strong>2 / 4 / 8 MAC units</strong></li>
+        <li>Configurable operand widths: <strong>INT8 / INT16 / INT32</strong></li>
+        <li>Scratchpad memory + controller</li>
+        <li>Custom instructions: <code>MATMUL</code>, <code>CONV</code>, <code>MAC</code>, <code>DOT</code>, <code>LOAD_TILE</code>, <code>STORE_TILE</code>, <code>WAIT</code></li>
+        <li>Speedup / area / power trade-off evaluation on real FPGA fabric</li>
+      </ul>
+    </section>
+
+    <section class="dsec">
+      <h2>Architecture</h2>
+      <p>The baseline is a PicoRV32 RV32I core brought up on the Basys 3 (CPU + instruction memory in block RAM, debug LEDs
+      showing PC activity). The PCPI (Pico Co-Processor Interface) ports are wired out of the top module, ready for the
+      accelerator to attach as a co-processor.</p>
+      <p>Evaluations compare the scalar baseline against accelerator configurations across benchmark workloads for
+      execution cycles, speedup, area and energy.</p>
+    </section>
+
+    <section class="dsec">
+      <h2>Status &amp; Roadmap</h2>
+      <ul>
+        <li><strong>Phase 0–1 — done:</strong> problem definition + literature review (RedMulE, SCAIE-V, analog AI hardware review, CIDRE) with per-paper summaries and research-gap analysis</li>
+        <li><strong>Phase 2 — done:</strong> baseline PicoRV32 running on the Basys 3; PCPI ports exposed</li>
+        <li><strong>Phase 3+ — planned:</strong> benchmarks, accelerator RTL, ISA extension, verification (SystemVerilog / cocotb, differential HW-vs-SW), FPGA implementation, design-space exploration, final evaluation and paper</li>
+      </ul>
+      <p class="quiet">12-phase research roadmap with a published review-1 report and presentation under <code>report_and_ppt/</code>.</p>
+    </section>
+
+    <section class="dsec">
+      <h2>Tools &amp; Target</h2>
+      <ul>
+        <li>Board: Digilent Basys 3 — Xilinx Artix-7 XC7A35T</li>
+        <li>Synthesis / implementation: Xilinx Vivado 2025.2</li>
+        <li>Verification (planned): SystemVerilog / cocotb, iverilog or ModelSim</li>
+        <li>Firmware: RISC-V GCC toolchain · Baseline core: PicoRV32 (YosysHQ, ISC license)</li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    <div class="foot">
+      <span class="fb">Sayooj<b>S</b> · Hardware Engineer</span>
+      <span>Electronics &amp; VLSI · KLU Hyderabad</span>
+      <span>© 2026 Sayooj S</span>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

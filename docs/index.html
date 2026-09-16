@@ -3,55 +3,503 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sayooj S — Electronics / VLSI / Linux</title>
+  <title>Sayooj S — Hardware Engineer · VLSI &amp; Electronics Student</title>
+  <meta name="description" content="Portfolio of Sayooj S — Hardware Engineering student specializing in VLSI. CPU microarchitecture, RTL design, hardware verification and digital IC design.">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <meta name="description" content="Portfolio of Sayooj S — Electronics, VLSI, and Linux enthusiast. Hardware Verification, RTL Design, and more.">
 </head>
 <body>
 
   <nav class="topnav">
     <div class="topnav-inner">
-      <a href="index.html" class="topnav-brand"><span>&gt;</span> sayooj</a>
+      <a href="#hero" class="brand">SAYOOJ<b>S</b></a>
       <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
-      <div class="topnav-links">
-        <a href="index.html" class="tab active">Home</a>
-        <a href="about.html" class="tab">About</a>
-        <a href="skills.html" class="tab">Skills</a>
-        <a href="projects.html" class="tab">Projects</a>
-        <a href="education.html" class="tab">Education</a>
-        <a href="contact.html" class="tab">Contact</a>
+      <div class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+        <a href="resume.pdf" class="nav-cta">Resume</a>
       </div>
     </div>
   </nav>
 
-  <div class="page">
-    <section class="hero">
-      <div class="hero-row">
-        <div class="hero-text">
-          <h1>SAYOOJ S</h1>
-          <div class="hero-tags">
-            <span>Electronics &amp; VLSI Enthusiast</span>
-            <span>Hardware Verification</span>
-            <span>RTL Design</span>
-            <span>Linux Advocate</span>
-            <span>CPU Microarchitecture</span>
-          </div>
+  <main>
+
+    <!-- ── HERO ─────────────────────────────────────────────── -->
+    <section id="hero" class="hero">
+      <div class="page">
+        <div class="hero-status"><span class="dot"></span>Open to opportunities</div>
+        <p class="hero-kicker">Electronics &amp; VLSI · Hardware Engineering</p>
+        <h1>SAYOOJ&nbsp;<b>S</b></h1>
+        <p class="hero-title">Hardware Engineer &middot; <span class="hl">Electronics &amp; VLSI Student</span><br>
+        CPU Microarchitecture · RTL Design · Verification</p>
+
+        <div class="hero-chips">
+          <span class="chip">RTL Design</span>
+          <span class="chip">Hardware Verification</span>
+          <span class="chip">CPU Microarchitecture</span>
+          <span class="chip">FPGA / ASIC Flow</span>
+          <span class="chip">Linux</span>
         </div>
-        <canvas id="ascii-canvas" class="ascii-canvas" width="500" height="400"></canvas>
-      </div>
-      <div class="hero-status">Available for opportunities</div>
-      <div class="hero-links">
-        <a href="mailto:Sayoojsumesh1112@gmail.com">Email</a>
-        <a href="https://www.linkedin.com/in/sayooj-s-7a8580285/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/Bolol4002" target="_blank" rel="noopener">GitHub</a>
+
+        <div class="hero-actions">
+          <a href="resume.pdf" download class="btn btn-amber">Resume</a>
+          <a href="mailto:Sayoojsumesh1112@gmail.com" class="btn">Email</a>
+          <a href="https://github.com/Bolol4002" target="_blank" rel="noopener" class="btn">GitHub</a>
+          <a href="https://www.linkedin.com/in/sayooj-s-7a8580285/" target="_blank" rel="noopener" class="btn">LinkedIn</a>
+        </div>
+
+        <div class="hero-facts">
+          <div class="hf"><span>Role</span><b>Hardware Engineer</b></div>
+          <div class="hf"><span>University</span><b>KL Univ., Hyderabad</b></div>
+          <div class="hf"><span>Degree</span><b>B.Tech ECE · VLSI</b></div>
+          <div class="hf"><span>Grad year</span><b>2027</b></div>
+        </div>
       </div>
     </section>
-  </div>
+
+    <!-- ── ABOUT ────────────────────────────────────────────── -->
+    <section id="about" class="sec">
+      <div class="page">
+        <div class="sec-head">
+          <span class="sec-num">/01</span>
+          <h2 class="sec-title">About<em>.</em></h2>
+          <div class="sec-line"></div>
+        </div>
+
+        <div class="about-grid">
+          <figure class="fig reg">
+            <img src="me.jpg" alt="Portrait of Sayooj S" class="fig-img">
+            <figcaption class="fig-cap"><b>Sayooj S</b> · Electronics &amp; VLSI</figcaption>
+          </figure>
+
+          <div class="about-text">
+            <p>I'm <strong>Sayooj S</strong>, an Electronics &amp; Communication Engineering student at
+            <strong>KL University, Hyderabad</strong>, specializing in <strong>VLSI</strong>. I design and verify
+            digital hardware — from pipelined processors and custom accelerators to bus protocols — and I get
+            genuinely excited about watching an instruction flow through a pipeline.</p>
+            <p>My work sits at the intersection of hardware and software: <strong>SystemVerilog RTL</strong> for
+            CPU microarchitecture, <strong>cocotb / UVM-style</strong> verification environments for proving
+            designs, and <strong>Python tooling</strong> for performance analysis and automation. I'm equally happy
+            wiring a simulation in Verilator as I am running synthesis in Vivado.</p>
+            <p>A strong <strong>Linux advocate</strong>, I live in terminal-first workflows — scripting builds,
+            parsing logs, and keeping my whole lab reproducible. I've driven a Verilog design all the way from RTL
+            to GDS in OpenLane, and I'm currently researching a <strong>configurable AI accelerator</strong> for
+            an embedded RISC-V core on FPGA.</p>
+            <p>I'm looking for <strong>hardware verification, RTL design, and VLSI</strong> opportunities where I
+            can contribute to real silicon.</p>
+
+            <div class="facts">
+              <div class="fact"><span>Location</span><b class="cyan">Hyderabad, India</b></div>
+              <div class="fact"><span>Degree</span><b>B.Tech ECE · VLSI</b></div>
+              <div class="fact"><span>CGPA</span><b class="cyan">9.35 / 10</b></div>
+              <div class="fact"><span>Focus</span><b>Digital IC Design</b></div>
+              <div class="fact"><span>Platform</span><b>Linux-first</b></div>
+              <div class="fact"><span>Grad year</span><b>2027</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── METRICS ──────────────────────────────────────────── -->
+    <section class="sec" style="padding-top:0">
+      <div class="page">
+        <div class="metrics">
+          <div class="metric"><b>9.35</b><span>CGPA · B.Tech ECE</span></div>
+          <div class="metric"><b>16</b><span>Engineering projects</span></div>
+          <div class="metric"><b>RTL→GDS</b><span>Full PD flow run</span></div>
+          <div class="metric"><b>2027</b><span>Graduation year</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SKILLS ───────────────────────────────────────────── -->
+    <section id="skills" class="sec">
+      <div class="page">
+        <div class="sec-head">
+          <span class="sec-num">/02</span>
+          <h2 class="sec-title">Skills &amp; Capabilities</h2>
+          <div class="sec-line"></div>
+        </div>
+
+        <div class="skills-grid">
+          <div class="panel reg">
+            <div class="panel-head"><h3>Languages</h3></div>
+            <ul>
+              <li>Verilog / SystemVerilog</li>
+              <li>Python</li>
+              <li>C / C++</li>
+              <li>Perl</li>
+              <li>Shell Script</li>
+              <li>Arduino (C/C++)</li>
+              <li>Java</li>
+            </ul>
+          </div>
+
+          <div class="panel reg">
+            <div class="panel-head"><h3>Tools &amp; Platforms</h3></div>
+            <ul>
+              <li>Xilinx Vivado</li>
+              <li>Cadence Virtuoso</li>
+              <li>OpenLane / OpenROAD</li>
+              <li>Icarus Verilog / Verilator</li>
+              <li>cocotb</li>
+              <li>QSPICE</li>
+              <li>Git</li>
+              <li>Linux / Unix</li>
+              <li>ESP32 / Arduino</li>
+              <li>TensorFlow / Keras / OpenCV</li>
+            </ul>
+          </div>
+
+          <div class="panel reg">
+            <div class="panel-head"><h3>Core Concepts</h3></div>
+            <ul>
+              <li>CPU Microarchitecture</li>
+              <li>RTL Design &amp; Synthesis</li>
+              <li>5-Stage Pipelining</li>
+              <li>Pipeline Hazards &amp; Forwarding</li>
+              <li>Performance Verification (CPI / IPC)</li>
+              <li>UVM / SVA / Functional Coverage</li>
+              <li>FPGA Design Flows</li>
+              <li>ASIC Physical Design (RTL→GDS)</li>
+              <li>Bus Protocols (APB, Wishbone, UART)</li>
+              <li>Power-Aware Design</li>
+            </ul>
+          </div>
+
+          <div class="panel reg">
+            <div class="panel-head"><h3>Domains</h3></div>
+            <ul>
+              <li>Hardware Verification</li>
+              <li>VLSI / Digital IC Design</li>
+              <li>Computer Architecture</li>
+              <li>Embedded Systems</li>
+              <li>Analog &amp; Mixed-Signal</li>
+              <li>Edge AI / Computer Vision</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROJECTS ─────────────────────────────────────────── -->
+    <section id="projects" class="sec">
+      <div class="page">
+        <div class="sec-head">
+          <span class="sec-num">/03</span>
+          <h2 class="sec-title">Projects<em>.</em></h2>
+          <div class="sec-line"></div>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filter projects">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="cpu">Processor / CPU</button>
+          <button class="filter-btn" data-filter="busmem">Protocols &amp; Memory</button>
+          <button class="filter-btn" data-filter="pd">Physical Design</button>
+          <button class="filter-btn" data-filter="power">Power &amp; Analog</button>
+          <button class="filter-btn" data-filter="verif">Verification</button>
+          <button class="filter-btn" data-filter="tooling">Tooling &amp; Lab</button>
+        </div>
+
+        <div class="projects-grid">
+
+          <article class="proj proj--featured reg" data-cat="cpu">
+            <img src="img/projects/configurable-ai-acceleration.svg" alt="AI accelerator co-processor diagram" class="proj-img">
+            <div class="proj-top"><span class="proj-cat"><b>Processor / CPU</b> · Research</span></div>
+            <h3><a href="projects/configurable-ai-acceleration.html">Configurable AI Acceleration</a></h3>
+            <div class="tags"><span>Verilog</span><span>PicoRV32</span><span>Vivado</span><span>XC7A35T</span></div>
+            <p class="proj-desc">MAC-based AI accelerator integrated with an embedded RISC-V core on FPGA, driven by custom
+            RISC-V instructions (<code>MATMUL</code>, <code>CONV</code>, <code>MAC</code>). Phase 0–2 of a research project
+            evaluating speedup / area / power on Artix-7.</p>
+            <div class="proj-links">
+              <a href="projects/configurable-ai-acceleration.html">Details</a>
+              <a href="https://github.com/Bolol4002/configurable_AI_Acceleration" target="_blank" rel="noopener" class="gh">GitHub</a>
+            </div>
+          </article>
+
+          <article class="proj proj--featured reg" data-cat="pd">
+            <img src="img/accumulator/layout.png" alt="4-bit accumulator ASIC layout" class="proj-img">
+            <div class="proj-top"><span class="proj-cat"><b>Physical Design</b></span></div>
+            <h3><a href="projects/accumulator.html">4-bit Accumulator · RTL→GDS</a></h3>
+            <div class="tags"><span>Verilog</span><span>OpenLane</span><span>OpenROAD</span></div>
+            <p class="proj-desc">First complete RTL-to-GDS physical design flow — synthesis, placement &amp; routing, and
+            DRC / LVS / STA signoff of a 4-bit accumulator using the open-source OpenLane flow.</p>
+            <div class="proj-links">
+              <a href="projects/accumulator.html">Details</a>
+              <a href="https://github.com/Bolol4002/accumulator-rtl_to_gds" target="_blank" rel="noopener" class="gh">GitHub</a>
+            </div>
+          </article>
+
+          <article class="proj" data-cat="cpu">
+            <img src="img/s-core/architecture.png" alt="s-core CPU architecture diagram" class="proj-img">
+            <div class="proj-top"><span class="proj-cat"><b>Processor / CPU</b></span></div>
+            <h3><a href="projects/s-core.html">s-core · RISC-V CPU</a></h3>
+            <div class="tags"><span>SystemVerilog</span><span>cocotb</span><span>FPGA</span></div>
+            <p class="proj-desc">Single-cycle RISC-V CPU built module-by-module — ALU, register file, PC, decoder, control
+            unit and top-level datapath — every module unit-tested with cocotb, targeting the Basys 3 board.</p>
+            <div class="proj-links">
+              <a href="projects/s-core.html">Details</a>
+              <a href="https://github.com/Bolol4002/s-core" target="_blank" rel="noopener" class="gh">GitHub</a>
+            </div>
+          </article>
+
+          <article class="proj" data-cat="cpu">
+            <img src="img/projects/valid-ready-pipeline.svg" alt="Valid/ready handshake diagram" class="proj-img">
+            <div class="proj-top"><span class="proj-cat"><b>Processor / CPU</b></span></div>
+            <h3><a href="projects/valid-ready-pipeline.html">Valid/Ready Pipeline Stage</a></h3>
+            <div class="tags"><span>SystemVerilog</span><span>cocotb</span><span>Handshake</span></div>
+            <p class="proj-desc">Single pipeline stage with the classic valid/ready flow-control protocol — bubble-through
+            forwarding and verified back-pressure behaviour under stimulus-driven cocotb tests.</p>
+            <div class="proj-links">
+              <a href="projects/valid-ready-pipeline.html">Details</a>
+              <a href="https://github.com/Bolol4002/valid_ready_pipeline" target="_blank" rel="noopener" class="gh">GitHub</a>
+            </div>
+          </article>
+
+          <article class="proj" data-cat="cpu">
+            <img src="img/projects/mips32.svg" alt="MIPS 5-stage pipeline diagram" class="proj-img">
+            <div class="proj-top"><span class="proj-cat"><b>Processor / CPU</b> · Study</span></div>
+            <h3><a href="projects/mips32.html">MIPS32 ISA Study</a></h3>
+            <div class="tags"><span>MIPS32</span><span>Architecture</span></div>
+            <p class="proj-desc">Architecture notes and roadmap for building a MIPS32 subset — GPR model, R/I/J
+            instruction encoding and the classic 5-stage pipeline with parallel decode.</p>
+            <div class="proj-links">
+              <a href="projects/mips32.html">Details</a>
+              <a href="https://github.com/Bolol4002/MIPS32" target="_blank" rel="noopener" class="gh">GitHub</a>
+            </div>
+          </article>
+
+          <article class="proj" data-cat="verif">
+            <img src="img/projects/adaptive-rtl-uvm.svg" alt="UVM verification environment diagram" class="proj-img">
+            <div class="proj-top"><span class="proj-cat"><b>Verification</b></span></div>
+            <h3><a href="projects/adaptive-rtl-uvm.html">UVM Verification · Adaptive Unit</a></h3>
+            <div class="tags"><span>SystemVerilog</span><span>UVM</span><span>Verilator</span></div>
+            <p class="proj-desc">UVM-style environment — driver, monitor, scoreboard — for an adaptive control unit with
+            dynamic mode switching. Verification completed with all 14 test cases passing.</p>
+            <div class="proj-links">
+              <a href="projects/adaptive-rtl-uvm.html">Details</a>
+              <a href="https://github.com/Bolol4002/adaptive_RTL_coding_UVM_Verification" target="_blank" rel="noopener" class="gh">GitHub</a>
+            </div>
+          </article>
+
+          <article class="proj" data-cat="power">
+            <img src="img/projects/adaptive-rtl.svg" alt="Adaptive control unit block diagram" class="proj-img">
+            <div class="proj-top"><span class="proj-cat"><b>Power &amp; Analog</b></span></div>
+            <h3><a href="projects/adaptive-rtl.html">Adaptive RTL Control Unit</a></h3>
+            <div class="tags"><span>Verilog</span><span>Vivado</span><span>Power</span></div>
+            <p class="proj-desc">Power-aware control unit switching between low-power and high-performance control strategies
+            at runtime — synthesized and analysed in Vivado without touching the datapath.</p>
+            <div class="proj-links">
+              <a href="projects/adaptive-rtl.html">Details</a>
+              <a href="https://github.com/Bolol4002/adaptive_RTL_coding" target="_blank" rel="noopener" class="gh">GitHub</a>
+            </div>
+          </article>
+
+          <article class="proj" data-cat="busmem">
+            <img src="img/projects/apb-memory-model.svg" alt="APB memory model transfer diagram" class="proj-img">
+            <div class="proj-top"><span class="proj-cat"><b>Protocols &amp; Memory</b></span></div>
+            <h3><a href="projects/apb-memory-model.html">AMBA APB Memory Model</a></h3>
+            <div class="tags"><span>SystemVerilog</span><span>SVA</span><span>Scoreboard</span></div>
+            <p class="proj-desc">APB memory model verified with a self-checking environment: SVA protocol assertions,
+            directed tests and constrained-rand traffic against a reference model.</p>
+            <div class="proj-links">
+              <a href="projects/apb-memory-model.html">Details</a>
+              <a href="https://github.com/Bolol4002/apb_memory_model" target="_blank" rel="noopener" class="gh">GitHub</a>
+            </div>
+          </article>
+
+          <article class="proj" data-cat="busmem">
+            <img src="img/projects/uart.svg" alt="UART frame diagram" class="proj-img">
+            <div class="proj-top"><span class="proj-cat"><b>Protocols &amp; Memory</b></span></div>
+            <h3><a href="projects/uart.html">UART Serial Core</a></h3>
+            <div class="tags"><span>Verilog</span><span>Icarus Verilog</span></div>
+            <p class="proj-desc">Learning-and-building UART: baud-rate generator and transmitter with start / parity / stop
+            framing for asynchronous serial links.</p>
+            <div class="proj-links">
+              <a href="projects/uart.html">Details</a>
+              <a href="https://github.com/Bolol4002/UART" target="_blank" rel="noopener" class="gh">GitHub</a>
+            </div>
+          </article>
+
+          <article class="proj" data-cat="busmem">
+            <img src="img/projects/fifo.svg" alt="Synchronous FIFO block diagram" class="proj-img">
+            <div class="proj-top"><span class="proj-cat"><b>Protocols &amp; Memory</b></span></div>
+            <h3><a href="projects/fifo.html">Synchronous FIFO</a></h3>
+            <div class="tags"><span>Verilog</span><span>Coverage</span></div>
+            <p class="proj-desc">Count-based 16-entry FIFO with a coverage-minded testbench probing push / pop / full /
+            empty states — a deliberate exercise in the coverage mindset.</p>
+            <div class="proj-links">
+              <a href="projects/fifo.html">Details</a>
+              <a href="https://github.com/Bolol4002/FIFO" target="_blank" rel="noopener" class="gh">GitHub</a>
+            </div>
+          </article>
+
+          <article class="proj" data-cat="busmem">
+            <img src="img/projects/wishbone.svg" alt="Wishbone master-slave bus diagram" class="proj-img">
+            <div class="proj-top"><span class="proj-cat"><b>Protocols &amp; Memory</b></span></div>
+            <h3><a href="projects/wishbone.html">Wishbone Master / Slave</a></h3>
+            <div class="tags"><span>Verilog</span><span>iverilog</span><span>Bus</span></div>
+            <p class="proj-desc">Working open-source Wishbone bus implementation — master and 256-byte slave,
+            transaction-verified in Icarus Verilog with VCD waveform dumps.</p>
+            <div class="proj-links">
+              <a href="projects/wishbone.html">Details</a>
+              <a href="https://github.com/Bolol4002/wishbone_protocol" target="_blank" rel="noopener" class="gh">GitHub</a>
+            </div>
+          </article>
+
+          <article class="proj" data-cat="power">
+            <img src="img/projects/fault-tolerant-adc.svg" alt="Fault-tolerant ADC block diagram" class="proj-img">
+            <div class="proj-top"><span class="proj-cat"><b>Power &amp; Analog</b></span></div>
+            <h3><a href="projects/fault-tolerant-adc.html">Fault-Tolerant ADC</a></h3>
+            <div class="tags"><span>QSPICE</span><span>Analog</span></div>
+            <p class="proj-desc">Flash ADC with a fault-detection layer that gates the comparator ladder and raises an error
+            flag when Vref leaves the safe 7–9 V window.</p>
+            <div class="proj-links">
+              <a href="projects/fault-tolerant-adc.html">Details</a>
+              <a href="https://github.com/Bolol4002/Fault_Tolerant_ADC" target="_blank" rel="noopener" class="gh">GitHub</a>
+            </div>
+          </article>
+
+          <article class="proj" data-cat="verif">
+            <img src="img/projects/vlsi-agent.svg" alt="LLM verification agent pipeline" class="proj-img">
+            <div class="proj-top"><span class="proj-cat"><b>Verification</b> · AI Tooling</span></div>
+            <h3><a href="projects/vlsi-agent.html">vlsi-agent · LLM Verification</a></h3>
+            <div class="tags"><span>Python</span><span>FastAPI</span><span>LLM</span><span>iverilog</span></div>
+            <p class="proj-desc">LLM-powered verification agent that generates testbenches, compiles and runs simulations,
+            then auto-fixes failures — up to 3 repair attempts with a built-in fallback.</p>
+            <div class="proj-links">
+              <a href="projects/vlsi-agent.html">Details</a>
+              <a href="https://github.com/Bolol4002/vlsi-agent" target="_blank" rel="noopener" class="gh">GitHub</a>
+            </div>
+          </article>
+
+          <article class="proj" data-cat="tooling">
+            <img src="img/projects/cpu-analyzer.svg" alt="CPI/IPC performance analysis flow" class="proj-img">
+            <div class="proj-top"><span class="proj-cat"><b>Tooling &amp; Lab</b></span></div>
+            <h3><a href="projects/cpu-analyzer.html">CPU Performance Analyzer</a></h3>
+            <div class="tags"><span>Python</span><span>Perl</span></div>
+            <p class="proj-desc">Cycle-level analyzer computing CPI, IPC, stall cycles and execution time from CPU execution
+            logs, with configurable clock frequencies and instruction breakdowns.</p>
+            <div class="proj-links">
+              <a href="projects/cpu-analyzer.html">Details</a>
+              <a href="https://github.com/Bolol4002/cpu-performance-analyzer" target="_blank" rel="noopener" class="gh">GitHub</a>
+            </div>
+          </article>
+
+          <article class="proj" data-cat="tooling">
+            <img src="img/projects/cpu-log-parsing.svg" alt="CPU log parsing diagram" class="proj-img">
+            <div class="proj-top"><span class="proj-cat"><b>Tooling &amp; Lab</b></span></div>
+            <h3><a href="projects/cpu-log-parsing.html">CPU Log Parsing Toolkit</a></h3>
+            <div class="tags"><span>Python</span><span>Regex</span></div>
+            <p class="proj-desc">Regex-based parser for opcode profiling, cycle extraction and automatic performance summaries
+            — companion tool to the CPU performance analyzer.</p>
+            <div class="proj-links">
+              <a href="projects/cpu-log-parsing.html">Details</a>
+              <a href="https://github.com/Bolol4002/python_based_log_parsing" target="_blank" rel="noopener" class="gh">GitHub</a>
+            </div>
+          </article>
+
+          <article class="proj" data-cat="tooling">
+            <img src="img/projects/vlsi-python-lab.svg" alt="VLSI PD automation algorithms flow" class="proj-img">
+            <div class="proj-top"><span class="proj-cat"><b>Tooling &amp; Lab</b></span></div>
+            <h3><a href="projects/vlsi-python-lab.html">VLSI PD &amp; Automation Lab</a></h3>
+            <div class="tags"><span>Python</span><span>Verilog</span><span>Algorithms</span></div>
+            <p class="proj-desc">KLU physical design automation lab — BFS/DFS, Dijkstra, MSTs, Kernighan–Lin partitioning,
+            simulated annealing — plus 10 Verilog experiments with matching testbenches.</p>
+            <div class="proj-links">
+              <a href="projects/vlsi-python-lab.html">Details</a>
+              <a href="https://github.com/Bolol4002/VLSI-python_lab" target="_blank" rel="noopener" class="gh">GitHub</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── EDUCATION ────────────────────────────────────────── -->
+    <section id="education" class="sec">
+      <div class="page">
+        <div class="sec-head">
+          <span class="sec-num">/04</span>
+          <h2 class="sec-title">Education<em>.</em></h2>
+          <div class="sec-line"></div>
+        </div>
+
+        <ol class="timeline">
+          <li class="is-pinned">
+            <div class="t-item">
+              <div class="t-year">2023 — 2027</div>
+              <h3>B.Tech · Electronics &amp; Communication Engineering</h3>
+              <p>KL University, Hyderabad · <span class="gpa">VLSI Specialization · CGPA 9.35 / 10</span></p>
+              <p class="t-note">Coursework: VLSI physical design &amp; automation · Digital IC design · Computer architecture · Analog circuits</p>
+            </div>
+          </li>
+          <li>
+            <div class="t-item">
+              <div class="t-year">2023</div>
+              <h3>Higher Secondary · Class XII</h3>
+              <p>GSPS Thengana, Kerala · <span class="gpa">CGPA 9.3 / 10</span></p>
+            </div>
+          </li>
+          <li>
+            <div class="t-item">
+              <div class="t-year">2021</div>
+              <h3>Secondary · Class X</h3>
+              <p>Kendriya Vidyalaya Adoor · <span class="gpa">CGPA 9.5 / 10</span></p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ──────────────────────────────────────────── -->
+    <section id="contact" class="sec">
+      <div class="page">
+        <div class="sec-head">
+          <span class="sec-num">/05</span>
+          <h2 class="sec-title">Contact<em>.</em></h2>
+          <div class="sec-line"></div>
+        </div>
+
+        <div class="contact-grid">
+          <a href="mailto:Sayoojsumesh1112@gmail.com" class="contact-card reg">
+            <div class="c-ico">@</div>
+            <div class="c-label">Email</div>
+            <div class="c-value">Sayoojsumesh1112@gmail.com</div>
+          </a>
+          <a href="https://www.linkedin.com/in/sayooj-s-7a8580285/" target="_blank" rel="noopener" class="contact-card reg">
+            <div class="c-ico">in</div>
+            <div class="c-label">LinkedIn</div>
+            <div class="c-value">In / Sayooj S</div>
+          </a>
+          <a href="https://github.com/Bolol4002" target="_blank" rel="noopener" class="contact-card reg">
+            <div class="c-ico">GH</div>
+            <div class="c-label">GitHub</div>
+            <div class="c-value">/ Bolol4002</div>
+          </a>
+        </div>
+
+        <div class="contact-note">
+          <p><span class="where">Hyderabad, India</span> &mdash; Open to <b>Hardware Verification</b>, <b>RTL Design</b> &amp;
+          <b>VLSI</b> roles, internships and full-time.</p>
+          <a href="resume.pdf" download class="btn btn-amber">Download Resume</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <footer>
-    <div>&copy; 2026 Sayooj S</div>
-    <div>Crafted with <span>precision</span></div>
+    <div class="foot">
+      <span class="fb">Sayooj<b>S</b> · Hardware Engineer</span>
+      <span>Electronics &amp; VLSI · KLU Hyderabad</span>
+      <span>© 2026 Sayooj S</span>
+    </div>
   </footer>
 
   <script src="main.js"></script>

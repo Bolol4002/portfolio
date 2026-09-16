@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UART Serial Core — Sayooj S</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="../index.html#hero" class="brand">SAYOOJ<b>S</b></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <div class="nav-links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="../resume.pdf" download class="nav-cta">Resume</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page pd">
+    <a class="back" href="../index.html#projects">← / Projects</a>
+    <div class="pd-head">
+      <h1>UART Serial Core</h1>
+      <div class="tags"><span>Verilog</span><span>Icarus Verilog</span><span>Serial Protocol</span></div>
+      <div class="pd-links">
+        <a href="https://github.com/Bolol4002/UART" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a>
+      </div>
+    </div>
+
+    <figure class="pd-fig">
+      <img src="../img/projects/uart.svg" alt="UART frame diagram">
+    </figure>
+
+    <section class="dsec">
+      <h2>Overview</h2>
+      <p><em>"Learning and building UART."</em> UART is the two-wire device-to-device protocol behind most embedded
+      systems — <strong>asynchronous</strong> serial communication with no shared clock and a configurable speed.
+      This project covers the concepts and implements the transmitter side with a baud-rate generator.</p>
+    </section>
+
+    <section class="dsec">
+      <h2>UART Fundamentals</h2>
+      <ul>
+        <li>TX / RX two-wire signalling</li>
+        <li>Configurable baud rates: 9600, 19200, 38400, …</li>
+        <li>Packet structure: start bit (high→low edge), data frame (5–8 bits, LSB first), optional parity, stop bit(s)</li>
+      </ul>
+    </section>
+
+    <section class="dsec">
+      <h2>Implementation</h2>
+      <ul>
+        <li><code>src/baud_gen.v</code> — baud-rate generator</li>
+        <li><code>src/uart_tx.v</code> — UART transmitter</li>
+        <li><code>tb/baud_gen_tb.v</code>, <code>tb/uart_tx_tb.v</code> — testbenches</li>
+        <li>Makefile-driven build</li>
+      </ul>
+    </section>
+
+    <section class="dsec">
+      <h2>Transmission Flow</h2>
+      <ol>
+        <li>Parallel data received from the data bus</li>
+        <li>Start, parity, and stop bits added to the frame</li>
+        <li>Full packet transmitted serially at the configured baud rate</li>
+        <li>Receiver samples the line at the same rate, discards framing bits, converts serial back to parallel</li>
+      </ol>
+      <p class="quiet">Status: baud generator and transmitter implemented · MIT licensed.</p>
+    </section>
+  </div>
+
+  <footer>
+    <div class="foot">
+      <span class="fb">Sayooj<b>S</b> · Hardware Engineer</span>
+      <span>Electronics &amp; VLSI · KLU Hyderabad</span>
+      <span>© 2026 Sayooj S</span>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

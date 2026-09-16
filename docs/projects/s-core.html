@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>s-core — RISC-V CPU — Sayooj S</title>
+  <title>s-core · RISC-V CPU — Sayooj S</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="icon" type="image/x-icon" href="../favicon.ico">
 </head>
@@ -11,98 +11,89 @@
 
   <nav class="topnav">
     <div class="topnav-inner">
-      <a href="../index.html" class="topnav-brand"><span>&gt;</span> sayooj</a>
+      <a href="../index.html#hero" class="brand">SAYOOJ<b>S</b></a>
       <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
-      <div class="topnav-links">
-        <a href="../index.html" class="tab">Home</a>
-        <a href="../about.html" class="tab">About</a>
-        <a href="../skills.html" class="tab">Skills</a>
-        <a href="../projects.html" class="tab active">Projects</a>
-        <a href="../education.html" class="tab">Education</a>
-        <a href="../contact.html" class="tab">Contact</a>
+      <div class="nav-links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="../resume.pdf" download class="nav-cta">Resume</a>
       </div>
     </div>
   </nav>
 
-  <div class="page project-detail">
-    <a href="../projects.html" class="back-link">&larr; All Projects</a>
-    <h1>s-core — RISC-V CPU</h1>
-    <div class="tech-tags">
-      <span>SystemVerilog</span>
-      <span>cocotb</span>
-      <span>Icarus Verilog</span>
-      <span>Vivado</span>
-      <span>FPGA</span>
+  <div class="page pd">
+    <a class="back" href="../index.html#projects">← / Projects</a>
+    <div class="pd-head">
+      <h1>s-core · RISC-V CPU</h1>
+      <div class="tags"><span>SystemVerilog</span><span>cocotb</span><span>Icarus Verilog</span><span>Vivado</span><span>FPGA</span></div>
+      <div class="pd-links">
+        <a href="https://github.com/Bolol4002/s-core" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a>
+      </div>
     </div>
 
-    <div class="detail-section">
+    <figure class="pd-fig">
+      <img src="../img/s-core/architecture.png" alt="s-core CPU architecture diagram">
+    </figure>
+
+    <section class="dsec">
       <h2>Overview</h2>
-      <p>A single-cycle RISC-V CPU implemented in SystemVerilog, built incrementally module by module. Each module is independently verified using cocotb (Python-based testbenches) and the design targets FPGA synthesis on a Xilinx Artix-7 Basys3 board.</p>
-    </div>
+      <p><em>"My nth attempt in building a CPU."</em> A single-cycle RISC-V CPU implemented in SystemVerilog, built
+      incrementally module by module. Every module is independently verified using <strong>cocotb</strong> (Python
+      testbenches) and the full CPU targets FPGA synthesis on the Xilinx Artix-7 Basys 3 board.</p>
+      <img src="../img/s-core/architecture.png" alt="s-core architecture diagram" class="proj-img" style="width:min(100%,560px);height:auto;margin:14px 0 4px;border:1px solid var(--line)">
+    </section>
 
-    <div class="detail-section">
-      <h2>Key Features</h2>
-      <ul>
-        <li>Modular, step-by-step CPU build — each module independently verified</li>
-        <li>RISC-V ISA-compliant instruction encoding</li>
-        <li>cocotb-based verification using Python (not SystemVerilog testbenches)</li>
-        <li>FPGA deployment target with clock divider for visual LED feedback</li>
-        <li>Scaffolding script (<code>new_module.sh</code>) for rapid module creation with boilerplate</li>
-        <li>OpenLane-style <code>config.json</code> for reproducible builds</li>
-      </ul>
-    </div>
-
-    <div class="detail-section">
+    <section class="dsec">
       <h2>Implemented Modules</h2>
       <ul>
-        <li><strong>ALU</strong> — 32-bit ALU supporting ADD, SUB, AND, OR with zero flag</li>
-        <li><strong>Register File</strong> — 32x32-bit register file with synchronous write, async read; x0 hardwired to zero</li>
+        <li><strong>ALU</strong> — 32-bit, ADD / SUB / AND / OR with zero flag</li>
+        <li><strong>Register File</strong> — 32×32-bit, synchronous write, asynchronous read, x0 hardwired to zero</li>
         <li><strong>Program Counter</strong> — 32-bit PC with synchronous update and reset</li>
-        <li><strong>PC+4 Adder</strong> — Combinational PC+4 for sequential instruction fetch</li>
-        <li><strong>Instruction Memory</strong> — 256x32-bit ROM loaded via <code>$readmemh</code></li>
-        <li><strong>Instruction Decoder</strong> — Extracts opcode, rd, funct3, rs1, rs2, funct7 from 32-bit instructions</li>
-        <li><strong>ALU Control</strong> — Decodes R-type funct7/funct3 fields into ALU operations</li>
-        <li><strong>Control Unit</strong> — Generates reg_write, alu_src, mem_read/write, mem_to_reg, branch, jump signals</li>
-        <li><strong>CPU Top</strong> — Top-level integration wiring all modules into a single-cycle datapath</li>
-        <li><strong>FPGA Top</strong> — FPGA wrapper with clock divider (100 MHz to ~1.5 Hz), drives 16 LEDs</li>
+        <li><strong>PC+4 Adder</strong> — combinational sequential-instruction fetch</li>
+        <li><strong>Instruction Memory</strong> — ROM loaded via <code>$readmemh</code></li>
+        <li><strong>Instruction Decoder</strong> — extracts opcode, rd, funct3, rs1, rs2, funct7</li>
+        <li><strong>ALU Control</strong> — decodes R-type funct fields into ALU ops</li>
+        <li><strong>Control Unit</strong> — reg_write, alu_src, mem signals, branch, jump</li>
+        <li><strong>CPU Top</strong> — single-cycle datapath integration</li>
+        <li><strong>FPGA Top</strong> — clock divider (100 MHz → ~1.5 Hz) driving 16 LEDs</li>
       </ul>
-    </div>
+    </section>
 
-    <div class="detail-section">
-      <h2>Architecture</h2>
-      <p>The datapath follows a classic single-cycle RISC-V design:</p>
-      <ul>
-        <li><strong>Fetch:</strong> PC indexes into instruction memory to fetch a 32-bit instruction</li>
-        <li><strong>Decode:</strong> Instruction decoder extracts fields; control unit generates control signals</li>
-        <li><strong>Execute:</strong> Register file reads source operands; ALU performs the operation</li>
-        <li><strong>Writeback:</strong> ALU result is written back to the destination register</li>
-      </ul>
-      <p>Currently supports R-type instructions only (ADD, SUB, AND, OR). Planned: I-type instructions, branches, jumps, and a full 5-stage pipeline.</p>
-    </div>
+    <section class="dsec">
+      <h2>Microarchitecture</h2>
+      <p>Classic single-cycle datapath: PC → Instruction Memory → Instruction Decoder → (Control Unit, ALU Control) →
+      Register File → ALU → writeback. Currently supporting R-type instructions
+      (ADD, SUB, AND, OR); a pipeline, I-type instructions, branches and jumps are planned.</p>
+    </section>
 
-    <div class="detail-section">
+    <section class="dsec">
       <h2>Verification</h2>
       <ul>
-        <li>Each module has its own cocotb testbench under <code>tb/&lt;module&gt;/</code></li>
-        <li>Tests run via <code>make</code> in each testbench directory</li>
-        <li>Simulation performed with Icarus Verilog as the backend</li>
+        <li>Every module has a dedicated cocotb testbench under <code>tb/&lt;module&gt;/</code></li>
+        <li>Tests run with <code>make</code>; Icarus Verilog backend</li>
+        <li>9 of 9 core modules implemented and tested</li>
       </ul>
-    </div>
+    </section>
 
-    <div class="detail-section">
+    <section class="dsec">
       <h2>FPGA Flow</h2>
       <ul>
-        <li><strong>Target:</strong> Xilinx Artix-7 (xc7a35tcpg236-1, Basys3 board)</li>
-        <li><strong>Clock:</strong> 10 ns period (100 MHz), with divider to ~1.5 Hz for LED visualization</li>
-        <li><strong>Constraints:</strong> Pin assignments for 16 LEDs, center button reset</li>
-        <li><strong>Synthesis:</strong> Vivado batch script (<code>create_project.tcl</code>) for automated build</li>
+        <li>Target: Xilinx Artix-7 (xc7a35tcpg236-1, Basys 3)</li>
+        <li>Clock: 10 ns (100 MHz) with divider for LED visualization</li>
+        <li>Automated build via Vivado batch script (<code>create_project.tcl</code>)</li>
       </ul>
-    </div>
+    </section>
   </div>
 
   <footer>
-    <div>&copy; 2026 Sayooj S</div>
-    <div>Crafted with <span>precision</span></div>
+    <div class="foot">
+      <span class="fb">Sayooj<b>S</b> · Hardware Engineer</span>
+      <span>Electronics &amp; VLSI · KLU Hyderabad</span>
+      <span>© 2026 Sayooj S</span>
+    </div>
   </footer>
 
   <script src="../main.js"></script>

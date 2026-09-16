@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wishbone Master / Slave — Sayooj S</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="../index.html#hero" class="brand">SAYOOJ<b>S</b></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <div class="nav-links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="../resume.pdf" download class="nav-cta">Resume</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page pd">
+    <a class="back" href="../index.html#projects">← / Projects</a>
+    <div class="pd-head">
+      <h1>Wishbone Master / Slave</h1>
+      <div class="tags"><span>Verilog</span><span>iverilog</span><span>Bus Protocol</span></div>
+      <div class="pd-links">
+        <a href="https://github.com/Bolol4002/wishbone_protocol" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a>
+      </div>
+    </div>
+
+    <figure class="pd-fig">
+      <img src="../img/projects/wishbone.svg" alt="Wishbone master-slave bus diagram">
+    </figure>
+
+    <section class="dsec">
+      <h2>Overview</h2>
+      <p>An educational implementation of the <strong>Wishbone bus protocol</strong> — the open-source hardware bus used in
+      FPGA/ASIC designs and open-source IP cores. Includes a Wishbone Master, a Wishbone Slave with 256×8-bit internal
+      memory, and a testbench, simulated with Icarus Verilog.</p>
+    </section>
+
+    <section class="dsec">
+      <h2>Wishbone Master</h2>
+      <p>Initiates bus transactions: waits for an external <code>start</code> pulse, then drives <code>cyc</code>,
+      <code>stb</code>, <code>we</code>, <code>adr</code>, <code>dat_o</code> until the slave acknowledges with
+      <code>ack</code>. De-asserts <code>cyc</code>/<code>stb</code> and clears <code>busy</code> on acknowledgement.</p>
+    </section>
+
+    <section class="dsec">
+      <h2>Wishbone Slave</h2>
+      <ul>
+        <li>256 × 8-bit internal memory</li>
+        <li>Responds when <code>cyc &amp;&amp; stb</code>: writes <code>dat_o</code> into <code>memory[adr]</code> when
+        <code>we=1</code>, reads onto <code>dat_i</code> when <code>we=0</code></li>
+        <li>Asserts <code>ack</code> on the clock edge</li>
+      </ul>
+    </section>
+
+    <section class="dsec">
+      <h2>Bus Cycles &amp; Testbench</h2>
+      <ul>
+        <li>Write cycle: master asserts <code>cyc/stb/we</code> with address + data → slave writes and acks</li>
+        <li>Read cycle: master asserts <code>cyc/stb</code> with address → slave drives data and acks</li>
+        <li>Testbench drives write/read transactions (addr 0x10 ← 0xAA, addr 0x20 ← 0x55), verifies, prints per-cycle log, dumps <code>wishbone.vcd</code></li>
+      </ul>
+      <div class="stat-box">iverilog -o wishbone_sim wishbone_tb.v
+vvp wishbone_sim
+gtkwave wishbone.vcd</div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="foot">
+      <span class="fb">Sayooj<b>S</b> · Hardware Engineer</span>
+      <span>Electronics &amp; VLSI · KLU Hyderabad</span>
+      <span>© 2026 Sayooj S</span>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>
