@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HLS Image-Processing Accelerator — Sayooj S</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="../index.html#hero" class="brand">SAYOOJ<b>S</b></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <div class="nav-links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="../resume.pdf" download class="nav-cta">Resume</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page pd">
+    <a class="back" href="../index.html#projects">← / Projects</a>
+    <div class="pd-head">
+      <h1>HLS Image-Processing Accelerator</h1>
+      <div class="tags"><span>C/C++</span><span>Bambu HLS</span><span>Verilog</span><span>FPGA</span></div>
+      <div class="pd-links">
+        <a href="https://github.com/Bolol4002/HLS-LAB" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a>
+      </div>
+    </div>
+
+    <figure class="pd-fig">
+      <img src="../img/projects/hls-lab.svg" alt="HLS-to-FPGA synthesis flow diagram">
+    </figure>
+
+    <section class="dsec">
+      <h2>Overview</h2>
+      <p>A hands-on <strong>High-Level Synthesis (HLS)</strong> laboratory series exploring how a C/C++ algorithm becomes a
+      hardware architecture. The long-term target is a hardware accelerator for <strong>Sobel edge detection</strong>
+      — implemented first as a software reference and then progressively transformed into optimized RTL with
+      <strong>Bambu HLS</strong>, targeting the <strong>Basys 3</strong> (Artix-7) board.</p>
+    </section>
+
+    <section class="dsec">
+      <h2>HLS Flow</h2>
+      <ul>
+        <li><strong>C/C++ algorithm</strong> → <code>Bambu HLS</code> (schedule · allocate · bind) → generated <strong>Verilog RTL</strong></li>
+        <li>RTL verified with <strong>Icarus Verilog / Verilator</strong> simulation against the reference implementation</li>
+        <li>Architectural optimization, then <strong>FPGA synthesis</strong> and implementation on the Basys 3</li>
+      </ul>
+    </section>
+
+    <section class="dsec">
+      <h2>Laboratory Progression</h2>
+      <ul>
+        <li><strong>Lab 0 — Adder</strong> · datapath / controller split, handshake (<code>start_port</code> / <code>done_port</code>)</li>
+        <li><strong>Lab 1 — Vector Addition</strong> · loops, arrays, memory interface, resource sharing vs. parallelism</li>
+        <li><strong>Lab 2 — MAC</strong> · multipliers, accumulators, DSP mapping</li>
+        <li><strong>Lab 3 — FIR Filter</strong> · streaming computation, sliding windows</li>
+        <li><strong>Lab 4 — 3×3 Convolution</strong> · the core structure behind Sobel</li>
+        <li><strong>Lab 5 — Naive Sobel</strong> · correct hardware reference, not yet optimized</li>
+        <li><strong>Lab 6 — Pipelined Sobel</strong> · target <code>II = 1</code> (one pixel per cycle)</li>
+        <li><strong>Lab 7 — Line-buffered Sobel</strong> · reuse rows to slash memory traffic</li>
+        <li><strong>Lab 8 — Streaming / Optimized Sobel</strong> · dataflow, array partitioning, streaming interfaces</li>
+        <li><strong>Lab 9 — FPGA implementation</strong> · Basys 3, BRAM-backed image, then UART/VGA</li>
+      </ul>
+    </section>
+
+    <section class="dsec">
+      <h2>Sobel Edge Detection</h2>
+      <p>Sobel operates on a 3×3 pixel neighborhood per output pixel, computing horizontal (<code>Gx</code>) and vertical
+      (<code>Gy</code>) gradient convolutions and combining them as <code>|Gx| + |Gy|</code> — avoiding an expensive
+      square-root — then saturating to an 8-bit output. The key hardware challenge is not the arithmetic but efficiently
+      feeding the 3×3 window every cycle (line buffers, shift registers, sliding windows).</p>
+      <p class="quiet">The emphasis of the project is the <em>architecture</em>: understanding how an HLS compiler's
+      scheduling, pipelining and memory decisions change latency, throughput (II) and FPGA resource utilization.</p>
+    </section>
+
+    <section class="dsec">
+      <h2>Toolchain</h2>
+      <ul>
+        <li>Bambu HLS (PandA 2024.10) — C/C++ → Verilog</li>
+        <li>Icarus Verilog / Verilator — RTL simulation &amp; linting</li>
+        <li>GCC / OpenCV — software reference implementation</li>
+        <li>GTKWave — waveform inspection</li>
+        <li>Vivado — final Basys 3 implementation</li>
+      </ul>
+      <p class="quiet">Status: environment set up, Lab 0 (adder) and Lab 1 (vector addition) verified in simulation.</p>
+    </section>
+  </div>
+
+  <footer>
+    <div class="foot">
+      <span class="fb">Sayooj<b>S</b> · Hardware Engineer</span>
+      <span>Electronics &amp; VLSI · KLU Hyderabad</span>
+      <span>© 2026 Sayooj S</span>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

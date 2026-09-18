@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="300" viewBox="0 0 520 300"><style>
+.box{fill:rgba(255,255,255,0.04);stroke:#3f6c9e;stroke-width:1.5}
+.box-hi{fill:rgba(89,214,255,0.07);stroke:#59d6ff;stroke-width:1.5}
+.box-am{fill:rgba(255,194,103,0.07);stroke:#ffc267;stroke-width:1.5}
+.k{fill:#cfe0f2;font-family:monospace;font-size:11}
+.dk{fill:#8a9cba;font-family:monospace;font-size:10}
+.am{fill:#ffc267;font-family:monospace;font-size:10;font-weight:bold}
+.cy{fill:#59d6ff;font-family:monospace;font-size:10;font-weight:bold}
+.l{stroke:#59d6ff;stroke-width:1.5;fill:none}
+.la{stroke:#ffc267;stroke-width:1.5;fill:none}
+.lm{stroke:#8a9cba;stroke-width:1;stroke-dasharray:4 4;fill:none}
+</style>
+
+<!-- C/C++ source -->
+<rect x="20" y="60" width="95" height="54" class="box"/>
+<text x="67" y="82" class="k" text-anchor="middle">C / C++</text>
+<text x="67" y="99" class="dk" text-anchor="middle">Sobel algo</text>
+
+<!-- Arrow C → Bambu -->
+<line x1="117" y1="87" x2="150" y2="87" class="l"/>
+<polygon points="150,87 142,82 142,92" fill="#59d6ff"/>
+
+<!-- Bambu HLS (highlighted) -->
+<rect x="152" y="50" width="120" height="74" class="box-hi"/>
+<text x="212" y="76" class="cy" text-anchor="middle">Bambu HLS</text>
+<text x="212" y="94" class="k" text-anchor="middle">schedule · alloc</text>
+<text x="212" y="110" class="dk" text-anchor="middle">datapath + FSM</text>
+
+<!-- Arrow Bambu → Verilog -->
+<line x1="272" y1="87" x2="305" y2="87" class="l"/>
+<polygon points="305,87 297,82 297,92" fill="#59d6ff"/>
+
+<!-- Generated Verilog -->
+<rect x="307" y="60" width="90" height="54" class="box"/>
+<text x="352" y="82" class="k" text-anchor="middle">Verilog</text>
+<text x="352" y="99" class="dk" text-anchor="middle">RTL</text>
+
+<!-- Arrow Verilog → Simulation -->
+<line x1="352" y1="116" x2="352" y2="150" class="l"/>
+<polygon points="352,150 347,142 357,142" fill="#59d6ff"/>
+
+<!-- Simulation -->
+<rect x="307" y="152" width="90" height="54" class="box"/>
+<text x="352" y="174" class="k" text-anchor="middle">Icarus /</text>
+<text x="352" y="190" class="dk" text-anchor="middle">Verilator sim</text>
+
+<!-- Verification feedback -->
+<line x1="260" y1="179" x2="200" y2="179" class="lm"/>
+<line x1="200" y1="179" x2="200" y2="126" class="lm"/>
+<text x="232" y="173" class="dk" font-size="9">verify vs C ref</text>
+
+<!-- to FPGA -->
+<line x1="442" y1="87" x2="472" y2="87" class="la"/>
+<line x1="352" y1="87" x2="352" y2="224" class="la"/>
+<line x1="352" y1="224" x2="270" y2="224" class="la"/>
+
+<!-- Sobel pipeline -->
+<rect x="30" y="205" width="230" height="60" class="box-am"/>
+<text x="145" y="229" class="am" text-anchor="middle">SOBEL · line-buffer pipeline</text>
+<text x="145" y="248" class="dk" text-anchor="middle">3×3 window · Gx + Gy · saturation</text>
+
+<!-- Basys 3 -->
+<rect x="410" y="60" width="90" height="54" class="box-am"/>
+<text x="455" y="82" class="am" text-anchor="middle">Basys 3</text>
+<text x="455" y="99" class="dk" text-anchor="middle">Artix-7 · XC7A35T</text>
+<line x1="432" y1="87" x2="410" y2="87" class="la"/>
+<polygon points="410,87 418,82 418,92" fill="#ffc267"/>
+
+<!-- Bottom label -->
+<text x="260" y="288" class="dk" text-anchor="middle">HLS labs · Adder → Vector Add → MAC → FIR → Convolution → Sobel</text>
+</svg>

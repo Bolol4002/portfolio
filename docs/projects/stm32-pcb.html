@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STM32 MCU Board (STM32F103C8T6) — Sayooj S</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="../index.html#hero" class="brand">SAYOOJ<b>S</b></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <div class="nav-links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="../resume.pdf" download class="nav-cta">Resume</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page pd">
+    <a class="back" href="../index.html#projects">← / Projects</a>
+    <div class="pd-head">
+      <h1>STM32 MCU Board · STM32F103C8T6</h1>
+      <div class="tags"><span>KiCad</span><span>PCB Design</span><span>ARM Cortex-M3</span></div>
+      <div class="pd-links">
+        <a href="https://github.com/Bolol4002/STM32_PCB" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a>
+      </div>
+    </div>
+
+    <figure class="pd-fig">
+      <img src="../img/stm32-pcb/pcb_3d.png" alt="3D render of STM32 microcontroller PCB">
+    </figure>
+
+    <section class="dsec">
+      <h2>Overview</h2>
+      <p>Custom <strong>STM32 microcontroller board</strong> designed entirely in <strong>KiCad</strong>, built around the
+      popular <strong>STM32F103C8T6</strong> (ARM Cortex-M3) in an LQFP-48 package. The project includes the full
+      schematic, PCB layout and 3D render, and covers <strong>power-integrity analysis</strong> — decoupling strategies and
+      ferrite-bead filtering for clean digital and analog domains.</p>
+    </section>
+
+    <section class="dsec">
+      <h2>Block Diagram</h2>
+      <ul>
+        <li><strong>USB Micro-B (J1)</strong> → 5 V VBUS rail with EMC filtering</li>
+        <li><strong>U2 — AMS1117-3.3</strong> → 3.3 V regulator for the MCU power domain</li>
+        <li><strong>U1 — STM32F103C8T6</strong> → the MCU, with 100 nF decoupling per VDD pair</li>
+        <li><strong>Y1 — 16 MHz crystal</strong> → HSE oscillator with 10 pF load caps</li>
+        <li><strong>FB1 — ferrite bead</strong> → isolates the noise-sensitive 3.3VA analog rail</li>
+        <li><strong>J2–J4</strong> → 1×4 pin headers for I/O, programming and power breakout</li>
+      </ul>
+    </section>
+
+    <section class="dsec">
+      <h2>Schematic</h2>
+      <figure class="pd-fig">
+        <img src="../img/stm32-pcb/schematic.png" alt="STM32 board schematic">
+      </figure>
+    </section>
+
+    <section class="dsec">
+      <h2>Key Components</h2>
+      <ul>
+        <li><strong>U1 — STM32F103C8T6</strong> — 32-bit ARM Cortex-M3 MCU, 64 KB flash / 20 KB SRAM, up to 72 MHz</li>
+        <li><strong>U2 — AMS1117-3.3</strong> — low-dropout 3.3 V regulator (SOT-223)</li>
+        <li><strong>Y1 — 16 MHz</strong> — HSE crystal with 10 pF loading capacitors (C9, C10)</li>
+        <li><strong>FB1 — 120 Ω</strong> — ferrite bead splitting the 3.3 V / 3.3VA analog supply</li>
+        <li><strong>C1–C8 — 100 nF / 1 µF / 10 nF</strong> — decoupling capacitors close to VDD pins</li>
+        <li><strong>C11, C12 — 22 µF</strong> — bulk capacitance on the power rails</li>
+        <li><strong>R1 — 10 kΩ</strong> — BOOT0 pull-down / reset wiring</li>
+        <li><strong>R2–R5 — 1.5 kΩ</strong> — LED current limiting and signal conditioning</li>
+        <li><strong>D1 — RED LED</strong> — power / GPIO status indication</li>
+        <li><strong>J1 — USB Micro-B</strong>, <strong>J2–J4 — 1×4 headers</strong> — USB + I/O breakout</li>
+      </ul>
+    </section>
+
+    <section class="dsec">
+      <h2>PCB Layout</h2>
+      <figure class="pd-fig">
+        <img src="../img/stm32-pcb/pcb.png" alt="PCB layout of STM32 board">
+      </figure>
+    </section>
+
+    <section class="dsec">
+      <h2>Power-Integrity Notes</h2>
+      <p>This board applies the classic power-delivery toolbox for mixed-signal MCU designs:</p>
+      <ul>
+        <li><strong>Decoupling capacitors</strong> placed as close as possible to each VDD pin act as a local energy
+        reservoir — supplying instantaneous current during switching transients, shunting high-frequency noise to ground,
+        and containing per-IC switching noise.</li>
+        <li><strong>Ferrite bead (FB1)</strong> sits in series on the 3.3VA rail to block high-frequency EMI / RFI and
+        isolate the noise-sensitive analog supply from the noisy digital domain — dissipating the energy as heat.</li>
+        <li>Bulk 22 µF capacitors smooth lower-frequency, higher-energy fluctuations across each power block.</li>
+      </ul>
+      <p class="quiet">Status: schematic, PCB layout and 3D render complete — ready for fabrication review.</p>
+    </section>
+  </div>
+
+  <footer>
+    <div class="foot">
+      <span class="fb">Sayooj<b>S</b> · Hardware Engineer</span>
+      <span>Electronics &amp; VLSI · KLU Hyderabad</span>
+      <span>© 2026 Sayooj S</span>
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>
